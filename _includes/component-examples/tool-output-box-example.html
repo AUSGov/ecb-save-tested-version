@@ -1,0 +1,48 @@
+<div class="bga-component-wrapper">
+    <div class="bga-component tool-output-box {{include.classes}} {{include.id}} m-0">
+
+        <div class="p-4 component-content h-100">
+
+            {% if include.tag-type == "optional" %}
+            <form class="mb-4">
+                <div class="col-12 p-0 form-example checkboxes tool-output-box-include">
+                    <input class="checkbox tool-output-box-input m-0 {% if include.dynamic-toggle %}dynamic-toggle {% endif %}" type="checkbox" role="checkbox"
+                    aria-checked="false"
+                    tabindex="0" aria-labelledby="{{ include.id }}" id="{{ include.id }}">
+                    <label for="{{ include.id }}" class="form-label mb-3">{{ include.input-label }}</label> 
+                </div>
+            </form>
+            {% endif%}
+
+            <div class="header mb-4">
+
+                <div class="title remove-element-padding me-4">
+                    <div class="icon-wrapper me-3"><img src={{ 'assets/icon-document-blueblack.svg' | relative_url }} alt="" /></div>
+
+                    {% if include.title %}
+                    <p><strong>{{ include.title }}</strong></p>
+                    {% endif %}
+
+                </div>
+
+                {% if include.tag %}
+                <div class="tag {{ include.tag-type }}"><span>{{ include.tag }}</span>
+                    <svg class="ms-1" data-name="Icon: Tick" xmlns="http://www.w3.org/2000/svg" width="15" height="11.866" viewBox="0 0 15 11.866">
+                    <path d="M0,6.95,1.779,5.14,4.916,8.285,13.206,0,15,1.783,4.916,11.866Z" fill="#fff"/>
+                  </svg>
+                  </div>
+                {% endif %}
+            </div>
+
+            <div class="component-text remove-element-padding">
+
+                {% if include.content %}
+                    {{ include.content }}
+                {% endif %}
+
+            </div>
+        </div>
+
+
+    </div>
+</div>

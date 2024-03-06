@@ -1,0 +1,292 @@
+.bga-component.tool-output-box {
+
+    form {
+        border-bottom: solid 1px $bga-blue-black-mid;
+        
+        label.form-label {
+            background: none;
+            display: inline-flex;
+            align-items: center;
+            min-height: 28px;
+            height: 44px;
+            font-size: 1rem;
+            font-weight: 400;
+            color: $bga-black;
+        }
+        .checkboxes [type=checkbox] {
+            top: 8px;
+            left: 8px;
+        }
+    }
+    .component-content {
+        background: $bga-blue-black-background-lightest;
+        border-left: solid 8px $bga-blue-black-light;
+    }
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .title {
+        display: flex;
+        align-items: center;
+    }
+
+    .icon-wrapper {
+        width: 56px;
+        height: 56px;
+        background: $bga-white;
+        border-radius: 100px;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    .tag {
+        background: $bga-blue-black-lightest;
+        border: 2px solid $bga-blue-black-light;
+        font-size: .75rem;
+        color: $bga-blue-black-dark;
+        font-weight: 700;
+        border-radius: 4px;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+        white-space: nowrap;
+        padding: 2px 8px;
+
+        &.optional {
+            background: $bga-white;
+            color: $bga-blue-black-dark;
+            border-color: $bga-teal-highlight-dark;
+        }
+
+        &.included {
+            background: $bga-green-success-background;
+            color: $bga-white;
+            border-color: $bga-green-success-background;
+        }
+
+        svg {
+            display: none;
+        }
+    }
+
+    &.pre-included .tag {
+        background: $bga-green-success-background;
+        color: $bga-white;
+        border-color: $bga-green-success-background;
+    }
+    .component-text {
+        a {
+            color: $bga-blue-links;
+            text-decoration: underline;
+            cursor: pointer;
+           
+            &:focus-visible {
+                border: $bga-text-focus-border;
+                border-radius: $bga-focus-radius;
+                color: $bga-blue-footer;
+            }
+
+            &:hover {
+                text-decoration: underline;
+                color: $bga-blue-footer;
+            }
+            
+        }
+        .textarea-input {
+            white-space: pre-wrap;
+
+            strong {
+                display: block;
+            }
+        }
+    }
+
+    &.added {
+        .tag {
+            background: $bga-green-success-background;
+            border-color: $bga-green-success-background;
+            color: $bga-white;
+            transition: background-color 800ms linear;
+            -moz-transition: background-color 800ms linear;
+            -webkit-transition: background-color 800ms linear;
+            -ms-transition: background-color 800ms linear;
+        }
+
+        .component-text {
+            span {
+                font-weight: 600;
+                display: inline;
+                background-color: $bga-blue-black-background-lightest;
+                transition: background-color 800ms linear;
+                -moz-transition: background-color 800ms linear;
+                -webkit-transition: background-color 800ms linear;
+                -ms-transition: background-color 800ms linear;
+            }
+            span.no-highlight {
+                font-weight: 400;
+                background-color: transparent !important;
+            }
+        }
+
+        &.highlight {
+            .tag {
+                svg {
+                    display: inline-block;
+                }
+            }
+            .component-text {
+                span {
+                    background-color: $bga-green-success-mid;
+                }
+                span.no-highlight {
+                    background-color: transparent !important;
+                }
+            }
+        }
+
+    }
+
+    &.teal {
+        .component-content {
+            background: $bga-teal-highlight-light;
+            border-left: solid 8px $bga-teal-highlight-dark;
+        }
+    }
+
+    table.table {
+        th {
+            background: $bga-blue-black-lightest;
+        }
+        td {
+            background: $bga-white;
+        }
+    }
+
+    &.non-branded {
+        form {
+            border-bottom: solid 1px $bga-black;
+            
+            label {
+                border: solid 3px $nb-grey-light;
+            }
+            .checkboxes [type=checkbox] {
+    
+                &:focus {
+                    
+                    + label {
+                        border: $nb-grey-light solid 3px;
+                    }
+                }
+                &:focus-visible + label {
+                    border-color: $nb-blue-links;
+                }
+            }
+        }
+        .component-content {
+            background: $nb-grey-light;
+        }
+        .icon-wrapper {
+            background: $nb-grey-light url(../assets/img-icon-placeholder.svg) no-repeat;
+            border-radius: 0;
+            width: 56px;
+            height: 56px;
+
+            img {
+                display: none;
+            }
+        }
+        .tag {
+            background: $bga-white;
+            border-color: $bga-white;
+            color: $bga-black;
+            border-radius: 4px;
+            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+            
+            &.optional {
+                color: $bga-black;
+                border-color: $bga-white;
+            }
+           
+            svg {
+                display: none;
+            }
+        }
+        .component-text {
+            a {
+                color: $nb-blue-links;
+               
+                &:focus-visible {
+                    border-color: $nb-blue-links;
+                    color: $nb-blue-links;
+                }
+    
+                &:hover {
+                    color: $nb-blue-links;
+                }
+                
+            }
+        }
+        &.added {
+            .tag {
+                background: $bga-black;
+                border-color: $bga-black;
+                color: $bga-white;
+            }
+    
+            .component-text {
+                span {
+                    background-color: $nb-grey-light;
+                }
+            }
+    
+            &.highlight {
+                .component-text {
+                    span {
+                        background-color: $nb-grey-mid;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+// Mixins for media queries and smaller screen examples
+@mixin outputbox-below576 () {
+    .tool-output-box {
+        .icon-wrapper {
+            display: none;
+        }
+        .header {
+            flex-wrap: wrap;
+        }
+        .title {
+            display: block;
+            width: 100%;
+            margin-bottom: 16px;
+        }
+    }
+}
+
+// SMALLER SCREENS display. Using classes instead of media queries because both breakpoint toggles and small size screens need to be taken into account.
+.component-example.bp-below576,
+.component-example.small-screen {
+    @include outputbox-below576();
+}
+
+// Media queries for HTML example pages
+@media (max-width: 576px) {
+    @include outputbox-below576();
+}

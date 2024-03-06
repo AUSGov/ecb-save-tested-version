@@ -1,0 +1,99 @@
+.search-tile.rsp-tile {
+    span.rsp-number {
+        font-weight: 400;
+    }
+    p.detail {
+        margin-bottom: 8px;
+
+        &:last-of-type {
+           
+            margin-bottom: 24px;
+        }
+    }
+    .tag-wrapper {
+        p {
+            font-size: 12px;
+        }
+    }
+    .tag {
+        svg {
+            margin-right: 8px;
+        }
+        &.registered {
+            background: $bga-green-highlight-light; 
+        }
+        &.not-registered {
+            background: $bga-red-fail-light;
+        }
+    }
+
+    .codes {
+        background: $bga-blue-background-extralight;
+        
+        .codes-content {
+            display: none;
+        }
+        p {
+            font-size: 0.875rem;
+            margin-bottom: 16px;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .codes-btn {
+        background: $bga-blue-background-extralight;
+        border: none;
+        width: 100%;
+        text-align: left;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: transform 0.2s ease-in-out;
+        color: $bga-black;
+
+        &:focus-visible {
+            background: $bga-blue-background-light;
+            border: $bga-component-focus-border;
+            border-radius: $bga-focus-radius;
+        }
+        &:hover {
+            background: $bga-blue-background-light;
+        }
+    }
+    .codes.open {
+        .codes-btn {
+            background: $bga-blue-background-light;
+
+            svg {
+                transform: scaleY(-1);
+            }
+        }
+    }
+}
+
+@mixin rsp-tiles-below991() {
+    .search-tile.rsp-tile {
+        .tag-wrapper {
+            flex-wrap: wrap;
+            
+            p {
+                width: 100%;
+            }
+        }
+        .tag {
+            margin-bottom: 8px;
+
+           
+        }
+    }
+}
+
+
+// Media queries for HTML example pages
+@media (max-width: 991px) {
+    @include rsp-tiles-below991();
+}

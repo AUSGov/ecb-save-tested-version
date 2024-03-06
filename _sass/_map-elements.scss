@@ -1,0 +1,143 @@
+.map {
+    background: $bga-blue-background-light url(../assets/map-australia.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+
+    &.controls-group {
+        min-height: 100px;
+       
+        #reset {
+            position: absolute;
+            bottom: 8px;
+            right: 56px;
+            z-index: 500;
+            padding: 4px 12px;
+            height: 40px;
+            background: #fff;
+            box-shadow: rgba(0,0,0,0.1) 0px 2px 6px 0px;
+            border-radius: 2px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        #zoom {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            padding: 0;
+            border-radius: 2px;
+            box-shadow: rgba(0,0,0,0.1) 0px 2px 6px 0px;
+            cursor: pointer;
+        }
+    }
+
+    &.clusters {
+        min-height: 150px;
+
+        .cluster {
+            cursor: pointer;
+            
+            &.large {
+                position: absolute;
+                left: 30%;
+                top: 35%;
+            }
+            &.small {
+                position: absolute;
+                right: 30%;
+                top: 35%;
+            }
+        }
+    }
+
+    &.marker {
+        height: 480px;
+        background-size: 150%;
+        background-position-y: -40px;
+
+        .adviser-marker {
+            position: absolute;
+            bottom: 50px;
+            right: calc(50% - 12px);
+            cursor: pointer;
+        }
+    }
+    .adviser-tile {
+        display: none; 
+        
+        &.show {
+            display: block;
+        }
+
+        .bga-component.search-tile {
+            border: none;
+            background: $bga-white;
+            position: absolute;
+            z-index: 9000;
+            width: calc(100% - 64px);
+            max-width: none;
+            height: auto;
+            max-height: 370px;
+            //border-radius: 4px;
+            box-shadow: $bga-btn-boxshadow;
+            left: 32px;
+            bottom: 92px;
+
+            .close {
+                top: 8px;
+            }
+
+            .tag {
+                background: $bga-blue-background-light;
+            }
+
+            .scroll-wrapper .scrollable {
+                max-height: 314px;
+                padding: 8px;
+                overflow-y: scroll;
+                padding-right: 0.5em;
+            }
+          
+            span.arrow {
+                background-color: $bga-white;
+                box-shadow: $bga-btn-boxshadow;
+                height: 16px;
+                width: 16px;
+                position: absolute;
+                bottom: -16px;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+                z-index: 900;
+            }
+        }  
+    }
+}
+
+
+@media (max-width: 768px) {
+    .map {
+        &.marker {
+            height: 380px;
+            background-size: 240%;
+
+            .adviser-marker {
+                bottom: 10px;
+            }
+        }
+        .adviser-tile {
+           
+            .bga-component.search-tile {
+                width: calc(100% - 16px);
+                max-height: 300px;
+                left: 8px;
+                bottom: 55px;
+
+                .scroll-wrapper .scrollable {
+                    max-height: 244px;
+                }
+            }
+        }
+    }
+}

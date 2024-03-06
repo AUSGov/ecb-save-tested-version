@@ -1,0 +1,361 @@
+.get-contract-modal.modal-example {
+    max-height: none;
+    height: auto;
+    position: fixed;
+    top: 5rem;
+    z-index: 9000;
+    left: calc(50% - 320px);
+    display: none;
+  
+    &.show {
+        display: block;
+    }
+
+    .icon-wrapper {
+        background: $bga-green-success-dark;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50px;
+
+        img {
+            width: 18px;
+        }
+    }
+
+    .number-code {
+        align-items: center;
+
+        input {
+            width: 56px;
+            border: none;
+            border-bottom: solid 4px $bga-blue-black-dark;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+            color: $bga-blue-black-dark;
+
+            &:focus-visible {
+                border: $bga-text-focus-border;
+                border-radius: $bga-focus-radius;
+                border-bottom: $bga-blue-focus solid 4px;
+            }
+        }
+        
+        .loading-animation {    
+            display: none;
+            position: relative;
+
+            &.show {
+                display: flex;
+                align-items: center;
+            }
+
+           
+            @keyframes fa-spin {
+                0% {
+                    transform: rotate(0deg)
+                }
+    
+                to {
+                    transform: rotate(1turn)
+                }
+            }
+            svg {
+                width: 44px;
+                height: 44px;
+                animation: fa-spin 2s linear infinite;
+            }
+    
+        }
+
+        .success-icon {
+            display: none;
+            position: relative;
+
+            &.show {
+                display: flex;
+                align-items: center;
+            }
+
+            svg {
+                flex-shrink: 0;
+            }
+            circle {
+                fill: $bga-green-success-dark;
+                stroke: $bga-green-success-dark;
+                stroke-width: 4px;
+                stroke-dasharray: 126;
+                animation: success-animation 2s linear infinite;
+                animation-timing-function: linear;
+                animation-iteration-count: 1;
+                transform: rotate(-90deg);
+                transform-origin: center;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            @keyframes success-animation {
+                0% {
+                    stroke-dashoffset: 126;
+                    fill: transparent;
+                }
+
+                50% {
+                    stroke-dashoffset: 0;
+                    fill: transparent;
+                }
+
+                100% {
+                    stroke-dashoffset: 0;
+                    fill: $bga-green-success-dark;
+                }
+            }
+
+            .tick {
+                position: absolute;
+                top: 21px;
+                left: 13px;
+            }
+            .msg {
+                color: $bga-green-success-background;
+                line-height: 1.5;
+                display: none;
+
+                &.show {
+                    display: block;
+                }
+            }
+        }
+        .error-msg {
+            display: none;
+        }
+        &.error {
+            .code-inputs {
+                box-shadow: 0 0 0 8px $bga-red-fail-mid;
+                background: $bga-red-fail-mid;
+            }
+            input {
+                background: $bga-red-fail-light;
+                border-bottom-color: $bga-red-fail-dark;
+            }
+
+            .error-msg {
+                display: block;
+                
+                p {
+                    color: $bga-red-fail-dark;
+                }
+            }
+        }
+    }
+    .resend {
+        display: flex;
+
+        a.sent {
+            color: $bga-green-success-background;
+            text-decoration: none;
+            cursor: default;
+
+            &:hover {
+                background: transparent;
+            }
+        }
+    }
+    &#nb {
+        .resend {
+            a.sent {
+                color: green;
+            }
+        }
+    }
+}
+
+#bga-modal-email, #nb-modal-email, #modal-email {
+    .step {
+        display: none;
+
+        &.show {
+            display: block;
+        }
+    }
+}
+#email-form {
+    input {
+        width: auto;
+        flex-grow: 1;
+    }
+}
+
+#bga-modal-download, #nb-modal-download, #modal-download, #ecb-modal-download {
+    .hide {
+        display: none;
+    }
+    .step {
+        display: none;
+
+        &.show {
+            display: block;
+        }
+    }
+    .animation-wrapper {
+        column-gap: 16px;
+        row-gap: 16px;
+    }
+    .loading-animation {
+
+        @keyframes fa-spin {
+            0% {
+                transform: rotate(0deg)
+            }
+
+            to {
+                transform: rotate(1turn)
+            }
+        }
+        svg {
+            width: 44px;
+            height: 44px;
+            animation: fa-spin 2s linear infinite;
+        }
+
+    }
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 8500;
+    background-color: $bga-black;
+    opacity: .6;
+    display: none;
+
+    &.show {
+        display: block;
+    }
+}
+
+@mixin get-contract-bp-768 {
+    .get-contract-modal.modal-example {
+        top: 1rem;
+        left: 16px;
+        width: calc(100% - 32px);
+        max-width: none;
+    }
+}
+@mixin get-contract-bp-576 {
+    .get-contract-modal.modal-example {
+        #email-form {
+            flex-wrap: wrap;
+
+            input {
+                width: 100%;
+                margin-bottom: 24px !important;
+                margin-right: 0 !important;
+            }
+        }
+        .modal-example {
+            .number-code {
+                input {
+                    width: 24%;
+                    max-width: 56px;
+                    padding: 8px 0px !important;
+                }
+            }
+        }
+    }
+}
+@mixin get-contract-bp-350 {
+    .get-contract-modal.modal-example {
+        .number-code {
+           
+            input {
+                width: 40px;
+            }
+            .loading-animation { 
+                svg {
+                    width: 32px;
+                    height: auto;
+                }
+            }
+            .success-icon {
+                margin-left: 16px !important;   
+
+                svg {
+                    width: 32px;
+                    height: auto;
+                }
+                svg.tick {
+                    width: 15px;
+                    top: 22px;
+                    left: 8px;
+                }
+            }
+        
+        }
+
+        #step-email-success .heading-wrapper {
+            display: block !important;
+
+            .success-icon-static {
+                padding-bottom: 16px;
+            }
+        }
+        #step-download-generate .animation-wrapper {
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            
+            svg {
+                margin-right: calc(100% - 60px);
+            }
+        }
+       
+        #step-success-animation .animation-wrapper {
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            
+            .bga-animation {
+                margin-right: calc(100% - 60px);
+            }
+        }
+    }
+}
+
+
+.component-example.bp-350, .component-example.bp-below350 {
+    @include get-contract-bp-768();
+    @include get-contract-bp-576();
+
+
+    .get-contract-modal.modal-example {
+        max-width: 400px;
+        left: calc(50% - 288px);
+    }
+
+}
+.component-example.bp-below350 {
+    @include get-contract-bp-768();
+    @include get-contract-bp-576();
+    @include get-contract-bp-350();
+
+    .get-contract-modal.modal-example {
+        max-width: 350px;
+        left: calc(50% - 175px);
+    }
+}
+
+@media (max-width: 768px) {
+    @include get-contract-bp-768();    
+}
+@media (max-width: 576px) {
+    @include get-contract-bp-576();
+}
+@media (max-width: 350px) {
+    @include get-contract-bp-350();
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body {% if page.id %} id="{{page.id}}" {% endif %}>
+    
+
+    <header class="easy-read-header">
+        <div class="header-wrapper">
+
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-12 col-md-7 col-lg-5 offset-lg-1">
+                      <div class="left-wrapper px-5">
+                        <a tabindex="0" class="return-link px-0 py-5 m-0">
+                            <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="10" height="16"
+                                viewBox="0 0 10 16">
+                                <path id="Path_8941" data-name="Path 8941"
+                                    d="M115.972,22,122,28.018,120.014,30,112,22l8.014-8L122,15.982Z"
+                                    transform="translate(-112 -14)" fill="#fff" fill-rule="evenodd" />
+                            </svg><span>Back to business.gov.au</span></a>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 col-md-5 col-lg-5 menu-trigger">
+                        <div class="right-wrapper px-5">
+                        <button tabindex="0"class="easy-read-menu-trigger my-0 p-5">
+                            <a tabindex="1" class="py-0 ps-0 pe-3 m-0">Menu</a>
+                            
+                              
+                        </button>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-12 col-lg-11 menu-container">
+                    <div class="menu-wrapper p-0">
+                        
+                        <div class="guide-contents p-4 remove-element-padding">
+
+                        <h2>In this guide</h2>
+
+                            <ul class="menu-links p-0 m-0">
+                                <li class="">
+                                    <a class="bga-link" tabindex="0" href={{ "/prototypes/bga/easy-read-standalone-1" | relative_url }}>How to use this document</a>
+                                </li>
+
+                                <li class="">
+                                    <a class="bga-link" tabindex="0" href={{ "/prototypes/bga/easy-read-standalone-2" | relative_url }}>What is an Australian Business Number?</a>
+                                </li>
+
+                                <li class="">
+                                    <a class="bga-link" tabindex="0" href={{ "/prototypes/bga/easy-read-standalone-3" | relative_url }}>How to cancel your ABN</a>
+                                    </li>
+                            </ul>
+
+                        </div>
+
+
+                        <div class="utilities p-4 remove-element-padding">
+
+                                <ul class="utility-links p-0 m-0">
+                                    <li class="">
+                                        <a class="bga-link" tabindex="0" href="" ><svg class="me-3" data-name="Icon / download" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+                                            <path d="M0,34V19.125H4.25V29.75h25.5V19.125H34V34ZM7.126,15,10.131,12l4.743,4.743V0h4.25V17l5-5L27.131,15l-10,10Z" fill="#2e3e5a"/>
+                                          </svg>Download a PDF of this document</a>
+                                    </li> 
+                                    
+                                    <li class="">
+                                        <a class="bga-link" tabindex="0" href=""><svg class="me-3" data-name="Icon: Print" xmlns="http://www.w3.org/2000/svg" width="36.637" height="35.443" viewBox="0 0 36.637 35.443">
+                                            <path d="M31.883,35.443H4.68V27.3H0V9.578H4.68v6.227H32.289V9.578h4.348l-.1,17.723h-4.62l-.033,8.14v0ZM8.423,32.091H28.076V27.78H8.423Zm0-20.117V0H28.544V11.975Z" fill="#2e3e5a"/>
+                                          </svg>Print this document</a>
+                                    </li>
+                                   
+                                </ul>
+    
+                            </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </header>
+
+
+    {{ content }}
+
+
+
+
+</body>
+</html>
+
+
+

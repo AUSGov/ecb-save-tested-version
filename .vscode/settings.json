@@ -1,0 +1,9 @@
+{
+    "diffEditor.wordWrap": "on",
+    "editor.wordWrap": "on",
+    "editor.autoClosingQuotes": "never",
+    "editor.autoClosingBrackets": "languageDefined",
+    "html.autoClosingTags": false,
+    "javascript.autoClosingTags": false,
+    "typescript.autoClosingTags": false
+}

@@ -1,0 +1,433 @@
+// MIXING for different accordion colours.
+@mixin pathway-accordion-colour ($colour-light, $colour-mid, $colour-dark) {
+
+    border-left: solid $colour-dark 8px;
+
+    .accordion-button {
+        background: $colour-light;
+
+        .chevron-wrapper {
+            background: $colour-mid;
+        }
+
+        &:focus-visible {
+            background-color: darken($colour-light, 5%);
+
+            .img-wrapper {
+                background-color: lighten($colour-light, 5%);
+            }
+
+            .chevron-wrapper {
+                background-color: $colour-dark;
+            }
+        }
+
+        &:hover {
+            background-color: darken($colour-light, 5%);
+
+            .img-wrapper {
+                background-color: lighten($colour-light, 2%);
+            }
+
+            .chevron-wrapper {
+                background-color: $colour-dark;
+            }
+        }
+
+        &:not(.collapsed) {
+            background-color: darken($colour-light, 5%);
+
+            .img-wrapper {
+                background-color: lighten($colour-light, 2%);
+            }
+
+            .chevron-wrapper {
+                background-color: $colour-dark;
+            }
+
+            &:hover {
+                background-color: darken($colour-light, 5%);
+
+                .img-wrapper {
+                    background-color: lighten($colour-light, 2%);
+                }
+
+                .chevron-wrapper {
+                    background-color: $colour-dark;
+                }
+            }
+        }
+    }
+
+    .accordion-body {
+        background: darken($colour-light, 5%);
+    }
+}
+
+
+.bga-component.bga-pathway-accordion {
+    background: none;
+    text-align: right;
+
+    .accordion-toggle {
+        border: none;
+        background: $bga-white;
+        text-decoration: underline;
+        cursor: pointer;
+        font-weight: 600;
+        box-shadow: none;
+        color: $bga-black;
+
+        &.close {
+            svg {
+                transform: scaleY(-1);
+            }
+        }
+    }
+
+    .accordion {
+        text-align: left;
+    }
+
+    .accordion-item {
+        border: none;
+        background: $bga-white;
+        border: $bga-blue-border solid 1px;
+        border-left: solid $bga-teal-highlight-dark 8px;
+        border-radius: 0;
+
+        &:focus-visible {
+            outline: none;
+        }
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        &.show {
+            background: $bga-white;
+        }
+
+        .accordion-button {
+            background: $bga-teal-highlight-light;
+            display: flex;
+            align-items: stretch;
+            border-radius: 0;
+            padding: 0;
+            text-decoration: none;
+
+            .img-wrapper {
+                background: $bga-white;
+                width: 250px;
+                flex-shrink: 0;
+                display: flex;
+            }
+
+            .title-wrapper {
+                display: flex;
+                flex-wrap: wrap;
+                width: calc(100% - 342px);
+
+                h3 {
+                    text-decoration: none;
+                }
+
+                p {
+                    text-decoration: none;
+                    display: block;
+                    width: 100%;
+                }
+            }
+
+            .chevron-wrapper {
+                background: $bga-teal-highlight-mid;
+                display: flex;
+                align-items: center;
+            }
+
+            &::after {
+                display: none;
+            }
+
+            &:focus {
+                box-shadow: none;
+            }
+
+            &:focus-visible {
+                border: $bga-component-focus-border;
+                border-radius: $bga-focus-radius;
+                background-color: darken($bga-teal-highlight-light, 5%);
+                text-decoration: none;
+
+                h3 {
+                    text-decoration: underline;
+                }
+
+                .img-wrapper {
+                    background-color: lighten($bga-teal-highlight-light, 5%);
+                }
+
+                .chevron-wrapper {
+                    background-color: $bga-teal-highlight-dark;
+                }
+            }
+
+            &:hover {
+                background-color: darken($bga-teal-highlight-light, 5%);
+                text-decoration: none;
+
+                h3 {
+                    text-decoration: underline;
+                }
+
+                .img-wrapper {
+                    background-color: lighten($bga-teal-highlight-light, 5%);
+                }
+
+                .chevron-wrapper {
+                    background-color: $bga-teal-highlight-dark;
+                }
+
+            }
+
+            &:not(.collapsed) {
+                background-color: darken($bga-teal-highlight-light, 5%);
+                border-bottom: $bga-blue-border solid 1px;
+                box-shadow: none;
+
+                .img-wrapper {
+                    background-color: lighten($bga-teal-highlight-light, 5%);
+                }
+
+                .chevron-wrapper {
+                    background-color: $bga-teal-highlight-dark;
+
+                    svg {
+                        transform: scaleY(-1);
+                    }
+                }
+
+                p {
+                    color: $bga-black;
+                }
+
+                &:hover {
+
+                    background-color: darken($bga-teal-highlight-light, 5%);
+
+                    .img-wrapper {
+                        background-color: lighten($bga-teal-highlight-light, 5%);
+                    }
+
+                    .chevron-wrapper {
+                        background-color: $bga-teal-highlight-dark;
+                    }
+                }
+            }
+        }
+
+        .accordion-body {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 24px;
+            background: darken($bga-teal-highlight-light, 5%);
+
+            .guide-tile {
+                background: $bga-white;
+                flex: 0 0 auto;
+                width: calc(33.33333333% - 16px);
+                margin-bottom: 24px;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: space-between;
+                cursor: pointer;
+
+                &:focus-visible {
+                    border: $bga-component-focus-border;
+                    border-radius: $bga-focus-radius;
+                    outline: none;
+
+                    h4 {
+                        text-decoration: underline;
+                    }
+                }
+
+                &:hover {
+                    h4 {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .tile-content-wrapper {
+                display: flex;
+                align-content: space-between;
+                flex-wrap: wrap;
+                margin-bottom: 24px;
+            }
+
+            .content {
+                height: 100% !important;
+            }
+
+            .tag {
+                font-size: 0.75rem;
+                font-weight: 600;
+                padding: 0px 8px;
+                background: $bga-yellow-highlight-dark;
+                border-radius: 4px;
+                border: solid 2px $bga-yellow-highlight-dark;
+                display: inline-flex;
+                align-content: center;
+
+                &.Recommended {
+                    background: $bga-white;
+                }
+
+                &.none {
+                    display: none;
+                }
+            }
+
+            .link {
+                display: flex;
+                align-items: center;
+
+                a {
+                    font-size: .75rem;
+                    font-weight: 400;
+                    text-decoration: none;
+                    color: $bga-black;
+                    display: flex;
+                    
+                    &:hover {
+                        background: none;
+                    }
+                }
+                
+            }
+        }
+    }
+
+    &.no-desc {
+        .accordion-item {
+            .accordion-button {
+                .title-wrapper {
+                    align-content: center;
+
+                    h3 {
+                        font-size: $h2-font-size;
+                        margin-bottom: 0 !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .accordion-item.purple {
+        @include pathway-accordion-colour($bga-purple-highlight-light, $bga-purple-highlight-mid, $bga-purple-highlight-dark);
+    }
+
+    .accordion-item.orange {
+        @include pathway-accordion-colour($bga-orange-highlight-light, $bga-orange-highlight-mid, $bga-orange-highlight-dark);
+    }
+
+    .accordion-item.yellow {
+        @include pathway-accordion-colour($bga-yellow-highlight-light, $bga-yellow-highlight-mid, $bga-yellow-highlight-dark);
+    }
+
+    .accordion-item.green {
+        @include pathway-accordion-colour($bga-green-highlight-light, $bga-green-highlight-mid, $bga-green-highlight-dark);
+    }
+
+    .accordion-item.blue {
+        @include pathway-accordion-colour($bga-blue-background-extralight, $bga-blue-highlight-mid, $bga-blue-highlight-dark);
+    }
+
+    &.non-branded {
+        .accordion-item {
+            &.nb {
+                @include pathway-accordion-colour($nb-grey-light, $nb-grey-mid, $nb-grey-dark);
+            }
+            border: none !important;
+
+            .accordion-button {
+                &:not(.collapsed) {
+                    border-bottom: $nb-grey-darkest 1px solid;
+                }
+                .img-wrapper  {
+                    background: $nb-grey-mid;
+                }
+            }
+            .accordion-body {
+                .tag {
+                    padding: 0px;
+                    background: none;
+                    border-radius: 0;
+                    border: none;
+                }
+            }
+        }
+    }
+}
+
+// Mixins for smaller screen sizes
+@mixin pathway-accordion-bp-768 () {
+    .bga-pathway-accordion {  
+        .accordion-item  { 
+            .accordion-body {
+                .guide-tile {
+                    width: calc(50% - 12px);
+                }
+            }
+        }
+    }
+}
+
+
+// Mixins for smaller screen sizes
+@mixin pathway-accordion-below768 () {
+    .bga-pathway-accordion {  
+        .accordion-item  { 
+            border-left: $bga-blue-border solid 1px;
+            .accordion-button {
+                .img-wrapper {
+                    display: none;
+                }
+                .title-wrapper {
+                    width: calc(100% - 60px);
+
+                    h3 {
+                        font-size: $h3-font-size !important;
+                    }
+                }
+
+                .chevron-wrapper {
+                    padding: 0 16px !important;
+                }
+            }
+            .accordion-body {
+                .guide-tile {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+// SMALLER SCREENS display. Using classes instead of media queries because both breakpoint toggles and small size screens need to be taken into account.
+.component-example.bp-768 {
+    @include pathway-accordion-bp-768();
+}
+
+.component-example.bp-below768 {
+    @include pathway-accordion-below768();
+}
+
+// Media queries for HTML example pages
+@media (max-width: 992px) {
+    @include pathway-accordion-bp-768();
+}
+@media (max-width: 768px) {
+    @include pathway-accordion-below768();
+}

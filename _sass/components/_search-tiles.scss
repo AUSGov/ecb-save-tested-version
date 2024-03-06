@@ -1,0 +1,386 @@
+.search-tile {
+    border: $bga-component-border;
+    border-left: solid 4px $bga-blue-background-dark;
+
+    .label,
+    .tag p,
+    .timeframe {
+        font-size: .75rem;
+        line-height: 1.5;
+    }
+    .tile-title {
+        font-size: 1.125rem;
+
+        a {
+            text-decoration: underline;
+
+            &:focus-visible {
+                color: $bga-blue-links;
+                background: $bga-blue-background-light;
+                border: $bga-text-focus-border;
+                border-radius: $bga-focus-radius;
+            }
+            &:hover {
+                color: $bga-blue-links;
+                background: $bga-blue-background-light;
+            }
+        }
+    }
+    .description,
+    .services, 
+    .cost {
+        font-size: 0.875rem;
+    }
+
+    .tag {
+        padding: 4px 8px;
+        background: $bga-blue-background-extralight;
+        border-radius: 4px;
+
+        img {
+            height: 16px;
+            width: auto;
+            flex-shrink: 0;
+        }
+    }
+
+    &.open-grant {
+        .tag {
+            background: $bga-green-highlight-light;
+        }
+    }
+    &.soon-grant {
+        .tag {
+            background: $bga-yellow-highlight-light;
+        }
+    }
+    &.closed-grant {
+        .tag {
+            background: $bga-red-fail-light;
+        }
+    }
+    .apply-details {
+        background: $bga-blue-background-extralight;
+        
+        .apply-details-content {
+            display: none;
+        }
+        p {
+            font-size: 0.875rem;
+            margin-bottom: 16px;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .apply-btn {
+        background: $bga-blue-background-extralight;
+        border: none;
+        width: 100%;
+        text-align: left;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: transform 0.2s ease-in-out;
+
+        &:focus-visible {
+            background: $bga-blue-background-light;
+            border: $bga-component-focus-border;
+            border-radius: $bga-focus-radius;
+        }
+        &:hover {
+            background: $bga-blue-background-light;
+        }
+    }
+    .apply-details.open {
+        .apply-btn {
+            background: $bga-blue-background-light;
+
+            svg {
+                transform: scaleY(-1);
+            }
+        }
+    }
+
+    &.grants-finder-tool {
+        .top-section {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            .label {
+                margin-right: 48px;
+            }
+        }
+        .shortlist-btn {
+            background: $bga-white url(../assets/icon-star-unstarred.svg) no-repeat;
+            background-position: right center;
+            min-height: 26px;
+            border: none;
+            font-size: .75rem;
+            line-height: 1.5;
+            color: $bga-blue-black-dark;
+            padding: 0 35px 0 0;
+            text-align: right;
+            white-space: nowrap;
+
+            &.added {
+                background-image: url(../assets/icon-star-starred.svg);
+            }
+        }
+
+        &.non-branded {
+            .shortlist-btn {
+                background: $bga-white;
+                padding: 0;
+                color: $bga-black;
+            }
+        }
+    }
+
+    &.non-branded {
+        .tile-title a {
+            &:focus-visible {
+                background: transparent;
+                color: $nb-blue-links;
+                border-color: $nb-blue-links;
+            }
+            &:hover {
+                background: transparent;
+                color: $nb-blue-links;
+            }
+        }
+        .tag {
+            background: $nb-grey-light;
+            border-radius: 8px;
+            .icon {
+                width: 16px;
+                height: 16px;
+                background: $nb-grey-dark;
+
+                img {
+                    display: none !important;
+                }
+            }
+        }
+        .apply-details {
+            background: $nb-grey-light;
+            
+            .apply-details-content {
+                display: none;
+            }
+            p {
+                font-size: 0.875rem;
+                margin-bottom: 16px;
+    
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .apply-btn {
+            background: $nb-grey-light;
+            color: $nb-blue-links;
+        
+            &:focus-visible {
+                background: $nb-grey-mid;
+                border-color: $nb-blue-links;
+            }
+            &:hover {
+                background: $nb-grey-mid;
+            }
+        }
+        .apply-details.open {
+            .apply-btn {
+                background: $nb-grey-mid;
+            }
+        }
+    }
+
+}
+
+.events-tile {
+    .delivery-type {
+        width: 100%;
+        background: $bga-teal-tool-mid;
+        
+        h3 {
+            color: $bga-white; 
+            font-size: 1.125rem;
+            font-weight: 600;
+        }   
+    }
+    .component-text {
+        background: $bga-teal-highlight-light;
+    }
+    .location-cost {
+        p {
+            font-size: 0.875rem;
+        }
+    }
+    .event-details {
+        background: $bga-white;
+
+        p {
+            font-size: 0.875rem;
+            margin-bottom: 16px;
+        }
+        .read-more-btn {
+            background: none;
+            border: none;
+            font-size: 0.875rem;
+            color: $bga-blue-links;
+            transition: transform 0.2s ease-in-out;
+            min-height: auto !important;
+
+            &:focus-visible {
+                border: $bga-text-focus-border;
+                border-radius: $bga-focus-radius;
+            }
+
+        }
+        .read-more-content {
+            display: none;
+        }
+        .highlighted-info {
+            border-top: solid 2px $bga-blue-black-light;
+            border-bottom: solid 2px $bga-blue-black-light;
+
+            p {
+                margin-bottom: 8px;
+
+                &:last-of-type {
+                    margin-bottom: 16px;
+                }
+            }
+        }
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 0.875rem;
+            color: $bga-blue-links;
+
+            &:focus-visible {
+                border: $bga-text-focus-border;
+                border-radius: $bga-focus-radius;
+            }
+        }
+
+        &.open {
+            .read-more-btn {
+                svg {
+                    transform: scaleY(-1);
+                }
+            }
+        }
+    }
+    &.online-event {
+        .delivery-type {
+            background: $bga-blue-background-dark;
+        }
+        .component-text {
+            background: $bga-blue-background-light;
+        }
+    }
+
+    &.non-branded {
+        .delivery-type {
+            background: $bga-black url(../assets/img-icon-placeholder.svg) no-repeat;
+            padding-left: 64px !important;
+            background-position: left 24px center;
+            background-size: 32px;
+
+            img {
+                display: none;
+            }
+            
+        }
+        .component-text {
+            background:$nb-grey-light;
+        }
+        .event-details {
+            .read-more-btn {
+                color: $nb-blue-links;
+
+                svg path {
+                    fill: $nb-blue-links;
+                }
+    
+                &:focus-visible {
+                    border-color: $nb-blue-links;
+                }
+    
+            }
+            .highlighted-info {
+                border-top: solid 2px $nb-grey-darkest;
+                border-bottom: solid 2px $nb-grey-darkest;
+            }
+            .close-btn {
+                color: $nb-blue-links;
+
+                svg path {
+                    fill: $nb-blue-links;
+                }
+    
+                &:focus-visible {
+                    border-color: $nb-blue-links;
+                }
+            }
+        }
+        .registration button svg {
+            display: none;
+        }
+    }
+}
+
+// Mixins for media queries and smaller screen examples
+@mixin search-tiles-below576 () {
+    .search-tile {
+        &.grants-finder-tool {
+            .top-section {
+                align-items: unset;
+                flex-direction: column-reverse;
+
+                .label {
+                    margin-top: 16px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .events-tile {
+        .date-time,
+        .location-cost {
+            flex-wrap: wrap;
+            p {
+                width: 100%;
+            }
+        }
+        .registration {
+            flex-wrap: wrap;
+            flex-direction: column-reverse;
+            justify-content: flex-end;
+
+            p {
+                width: 100%;
+            }
+            .button-example {
+                width: 100%;
+                margin-top: 16px;
+            }
+        }
+    }
+}
+
+// SMALLER SCREENS display. Using classes instead of media queries because both breakpoint toggles and small size screens need to be taken into account.
+.component-example.bp-below576 {
+    @include search-tiles-below576();
+}
+
+// Media queries for HTML example pages
+@media (max-width: 576px) {
+    @include search-tiles-below576();
+}

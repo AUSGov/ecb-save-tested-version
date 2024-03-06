@@ -1,0 +1,66 @@
+<div class="search-tile rsp-tile mb-5">
+
+    <div class="component-text p-4 remove-element-padding">
+
+        <h3 class="tile-title pt-0">{{ include.title }}</h3>
+        
+        {% if include.location %}
+        <p class="detail location"><strong>Address:</strong> {{ include.location }}</p>
+        {% endif %}
+
+        {% if include.contact %}
+        <p class="detail contact"><strong>Contact:</strong> {{ include.contact }}</p>
+        {% endif %}
+
+        {% if include.phone %}
+        <p class="detail phone"><strong>Phone:</strong> <a href="">{{ include.phone }}</a></p>
+        {% endif %}
+
+        {% if include.website %}
+        <p class="detail website"><strong>Website:</strong> {{ include.website }}</p>
+        {% endif %} 
+     
+        
+
+       {% if include.rsp-number %}
+        <p class="mt-4 mb-2"><strong>RSP number:</strong> {{ include.rsp-number }}</p>
+        {% endif %}
+
+
+        <div class="tag-section-wrapper d-flex align-items-center ">
+            <p class="registration mb-0 me-2"><strong>Registered for:</strong></p>
+
+           
+                <div class="tag-wrapper align-items-center d-flex">
+                    {% if include.tag contains "current" %}
+                        <div class="tag registered d-inline-flex align-items-center remove-element-padding me-3">   
+                        <p><strong>Current financial year</strong> (2022-2023)</p>
+                        </div> 
+                    {% endif %}
+
+                    {% if include.tag contains "previous" %}
+                        <div class="tag not-registered d-inline-flex align-items-center remove-element-padding me-3">
+                            <p><strong>Past financial year</strong> (2021-2022)</p>
+                        </div> 
+                    {% endif %}
+                </div>
+           
+        </div> 
+        
+        
+    </div>
+
+    {% if include.codes %}
+    <div class="codes">
+        <div class="codes-content p-4 remove-element-padding">
+            {{ include.codes }}
+        </div>
+        <button class="codes-btn p-4">Supported ANZSRC codes
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10">
+                <path data-name="Path 11396" d="M614-1182.972,607.982-1189,606-1187.014l8,8.014,8-8.014L620.018-1189Z" transform="translate(-606 1189)" fill="#333" fill-rule="evenodd"/>
+              </svg>       
+        </button>
+    </div>
+    {% endif %}
+
+</div>

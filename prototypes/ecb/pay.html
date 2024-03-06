@@ -1,0 +1,388 @@
+---
+
+layout: ecb-8-step
+title: Employment Contract Tool
+stepped-nav-step: Pay
+step-number: 3
+
+---
+
+<div class="container page-content pay-page prototype-default-state my-5">
+
+
+    <!-- PAY RATE -->
+
+    <div id="section-pay-rate" class="row remove-element-padding">
+
+        <h2>Pay rate</h2>
+
+        <div class="col-12 col-md-8 col-xl-7">
+            <div class="question-section remove-element-padding">
+                
+                    <div class="mb-5 p-0 form-example tool-output-box-include">
+                        
+                        <label for="pay-rate-units" class="form-label mb-3"><strong>What is the employee's rate of pay?</strong></label>
+                        
+                        <p>Select an hourly or a weekly rate of pay.</p>
+   
+                        <div class="tool-output-box-radios radios" id="pay-rate-units">
+                        <div class="mb-5" role="radiogroup">
+                            
+                            <div class="radio-button alternate pb-1">
+                                <input class="form-check-input m-0" type="radio" name="pay-rate-units" id="hourly" data-value="per hour">
+                                <label class="form-check-label" for="hourly">
+                                    <strong>hourly</strong>
+                                </label>
+                            </div>
+
+                            <div class="radio-button alternate pb-1">
+                                <input class="form-check-input m-0" id="weekly" type="radio" name="pay-rate-units" id="weekly" data-value="per week">
+                                <label class="form-check-label" for="weekly">
+                                    <strong>weekly</strong>
+                                </label>
+                            </div>
+
+                        </div>
+
+                        </div>
+                    </div> 
+                    
+                    <label for="pay-rate" class="form-label mb-3"><strong>Enter the <span>hourly</span> pay rate</strong></label>
+                        
+                        <div class="textbox-units form-element-wrapper mb-3">
+                            <p class="m-0">$AUD</p>
+                            <input type="text" class="form-control tool-output-box-input m-0 sm-width" id="pay-amount" value="" required >
+                            <p class="m-0 pay-unit">per hour</p>
+                        </div>
+
+                
+                    {% include component-examples/notification-example.html
+                    icon="'../../assets/icon-notification-circle-info.svg' | relative_url "
+                    title="Award minimum rate"
+                    content="Enter an amount that, at least, covers the minimum award rate that applies to your employee's classification. Award minimum rates for juniors, apprentices, trainees or employees on a supported wage may be lower."
+                    classes="information"
+                    %}
+    
+
+                <div class="bga-component-wrapper">
+
+                    {% include component-examples/tool-output-box-example.html
+                        title="Pay clause"
+                        tag="Included"
+                        tag-type="mandatory"
+                        content="<p>You will be paid <strong>$<span data-answer='pay-amount'>[amount]</span> <span data-answer='pay-rate-units'>[per hour]</span></strong>. This pay rate does not include superannuation, we'll pay this separately.</p>"
+                        id="pay-rate"
+                    %}
+                   
+                </div>
+            </div>
+        </div>
+
+        <div class="h-100 col-12 col-md-4 offset-xl-1">
+
+            {% include component-examples/info-sidebar-example.html
+                title="Wages"
+                text="<p>Your employee's minimum wages are set out under the award – you must pay at least this amount. You'll also have to pay any applicable penalties, overtime, loadings and allowances.</p><p>The minimum wage depends on the employee's classification level in the award. You can find classification descriptions in the Pay and Conditions Tool or award.</p><p>It's important to pay the right amount. If you don't, you could face large penalties and may have to back pay your employee.</p><h3>Why salaries are not in the tool</h3>
+                <p>A salary must at least cover your employee's minimum entitlements under the award and the <a href='https://www.fairwork.gov.au/employment-conditions/national-employment-standards' target='_blank'>National Employment Standards    </a>. To help ensure you meet the law, salary arrangements need to meet strict rules and record keeping requirements. This includes reflecting the specific requirements of the relevant award. You need sound financial and legal advice to be able to use a salary arrangement.</p>"
+                classes="inpage teal"
+            %}
+
+        </div>
+
+    </div>
+
+    <hr class="section-divider my-5" />
+
+
+    <!-- PAYMENT METHOD -->
+
+    <div id="section-payment" class="row remove-element-padding">
+
+        <h2>Payment method</h2>
+
+        <div class="col-12 col-md-8 col-xl-7">
+
+            <!-- PAY FREQUENCY -->
+            <div class="question-section remove-element-padding mb-5">
+                
+                    <div class="mb-5 p-0 form-example tool-output-box-include">
+                        
+                        <label for="pay-frequency" class="form-label mb-3"><strong>How often will you pay your employee?</strong></label>
+                        
+                        <p>Select an hourly or a weekly rate of pay.</p>
+                        
+                        <div class="tool-output-box-radios radios mb-5" id="pay-frequency" role="radiogroup">
+                            
+                            <div class="radio-button alternate pb-1">
+                                <input class="form-check-input m-0" type="radio" name="pay-frequency" id="weekly-pay" data-value="weekly">
+                                <label class="form-check-label" for="weekly-pay">
+                                    <strong>weekly</strong>
+                                </label>
+                            </div>
+
+                            <div class="radio-button alternate pb-1">
+                                <input class="form-check-input m-0" type="radio" name="pay-frequency" id="fortnightly-pay" data-value="fortnightly">
+                                <label class="form-check-label" for="fortnightly-pay">
+                                    <strong>fortnightly</strong>
+                                </label>
+                            </div>
+
+                            <div class="radio-button alternate pb-1">
+                                <input class="form-check-input m-0" type="radio" name="pay-frequency" id="monthly-pay" data-value="monthly">
+                                <label class="form-check-label" for="monthly-pay">
+                                    <strong>monthly</strong>
+                                </label>
+                            </div>
+
+
+                        </div>
+
+                  
+                    </div>
+
+            </div>
+
+            <!-- PAY METHOD -->
+            <div class="question-section remove-element-padding">
+               
+                <div class="mb-5 p-0 form-example tool-output-box-include">
+                    
+                    <label for="pay-method" class="form-label mb-3"><strong>How will you pay your employee?</strong></label>
+                    
+                    <p>It's up to you which method you use, but record keeping might be easier if you pay electronically into a bank account.</p>
+                    
+                    <div class="tool-output-box-radios radios mb-5" id="pay-method" role="radiogroup">
+                        
+                        <div class="radio-button alternate pb-1">
+                            <input class="form-check-input m-0" type="radio" name="pay-method" id="bank-account" data-value="into your nominated bank account">
+                            <label class="form-check-label" for="bank-account">
+                                <strong>into the employee's nominated bank account</strong>
+                            </label>
+                        </div>
+
+                        <div class="radio-button alternate pb-1">
+                            <input class="form-check-input m-0" type="radio" name="pay-method" id="cash" data-value="in cash">
+                            <label class="form-check-label" for="cash">
+                                <strong>in cash</strong>
+                            </label>
+                        </div>
+
+                        <div class="radio-button alternate pb-1">
+                            <input class="form-check-input m-0" type="radio" name="pay-method" id="cheque" data-value="by cheque">
+                            <label class="form-check-label" for="cheque">
+                                <strong>by cheque</strong>
+                            </label>
+                        </div>
+
+
+                    </div>
+
+              
+                </div>
+
+            {% include component-examples/tool-output-box-example.html
+                title="Payment method clause"
+                tag="Included"
+                tag-type="mandatory"
+                content="<p>We will pay you <strong><span data-answer='pay-frequency'>[frequency]</span> <span data-answer='pay-method'>[pay method]</span></strong>.</p>"
+                id="pay-frequency"
+            %}
+
+        </div>
+
+
+        </div>
+
+        <div class="h-100 col-12 col-md-4  offset-xl-1">
+            {% include component-examples/info-sidebar-example.html
+            title="How and when to pay"
+            text="<p>Most awards outline how often you must pay employees – generally it will be weekly or fortnightly, and it must be at least monthly. You must pay money. Do not 'pay in kind', for example, with goods or food.</p>
+            <p>You must give your employee a pay slip within 1 working day of paying them with certain information on it. An incorrect or incomplete pay slip could be in breach of the law.</p>
+            <p>Learn more about paying wages and what you must include on a pay slip on the Fair Work Ombudsman website.</p>"
+            classes="inpage teal"
+            %}
+        </div>
+
+    </div>
+
+    <hr class="section-divider my-5" />
+
+
+     <!-- SUPERANNUATION -->
+     <div id="superannuation" class="row remove-element-padding">
+
+        <h2>Superannuation</h2>
+
+        <div class="remove-top-spaces col-12 col-md-8 col-xl-7">
+
+            <div class="question-section remove-element-padding">
+
+                <p>To avoid the superannuation guarantee charge (SGC), you must pay super guarantee (SG) contributions for eligible employees:</p>
+                <ul>
+                <li>at the correct amount in full</li>
+                <li>on time (by the quarterly due dates)</li>
+                <li>into a fund that meets the choice of fund rules.</li>
+                </ul>
+
+                {% include component-examples/tool-output-box-example.html
+                    title="Superannuation clause"
+                    tag="Included"
+                    tag-type="mandatory"
+                    content="<p>If you are eligible for the super guarantee (SG), we will pay the contributions on your behalf in accordance with legislation and your award. We will pay contributions into a super fund of your choice.</p>
+                    <p>If you do not tell us your choice of fund, we may need to contact the ATO to find out if you have a 'stapled' super fund to make your SG contributions into.</p>
+                    <p>If you do not tell us your choice of fund and the ATO confirms you don't have a stapled super fund, we will pay your SG contributions to our default fund or another fund that meets the choice of fund rules.</p>"
+                    id="superannuation"
+                    classes="pre-included"
+                %}
+            </div>
+
+        </div>
+
+        <div class="h-100 col-12 col-md-4  offset-xl-1">
+            {% include component-examples/info-sidebar-example.html
+            title="Is your employee eligible?"
+            text="<p>You’re required to make super guarantee (SG) contributions to a fund that meets the choice of fund rules (based on their ordinary time earnings) regardless of how much the employee is paid.</p>
+            <p>If the employee is under 18 or a domestic worker, such as a nanny, they will have to work more than 30 hours a week to be eligible.</p>
+            <p>Ordinary time earnings are the amounts your employee earns for their ordinary hours of work. This includes things like commission, shift loadings and allowances, but not overtime payments.</p>
+            <p>Check that the SG you pay takes into account the increase of the SG rate from 10.5% to 11% on 1 July 2023. This means you need to calculate super contributions at 11% for eligible employees for payments based on their ordinary time earnings you make on or after this date.</p>
+            <p>If you don’t meet your SG obligations by the SG quarterly due dates, you’ll have to pay the Super Guarantee Charge (SGC). You’ll need to lodge an SGC statement and pay the SGC to the ATO. This will cost you more than paying the correct SG on time. SGC is not tax deductible and you may also have to pay additional penalties or charges.</p>
+            <h3>How much to pay</h3>
+            <p>The minimum SG rate is legislated to increase by 0.5% each financial year until it reaches 12% on 1 July 2025. Check the ATO website for the current super rate and for help calculating how much to pay.</p>
+            <p>You must also check your award for any extra super requirements. Some awards specify things like default super funds, higher contribution rates and how often you must pay super. Make sure you meet these award requirements, as well as paying the minimum amount to avoid the SGC.</p>
+            <p>If you make additional contributions, be aware that your employee may have to pay extra tax if they get more than a certain amount of super in a year.</p>
+            <h3>Which super fund to use</h3>
+            <p>Most employees can choose the super fund they want their super contributions to be paid into. For employees that start from 1 November 2021 onwards, if they do not nominate a super fund, you may need to contact the ATO to find out if they have an existing account ('stapled' super fund) to pay SG contributions into.</p>"
+            classes="inpage teal"
+            %}
+        </div>
+
+    </div>
+
+    <hr class="section-divider my-5" />
+
+
+    <!-- ADDITIONAL SUPERANNUATION -->
+    <div id="section-additional-superannuation" class="row remove-element-padding">
+
+        <h3>Additional superannuation</h3>
+
+        <div class="col-12 col-md-8 col-xl-7">
+
+            <div class="question-section remove-element-padding">
+               
+                <p>Select this clause if the <a href="https://www.fairwork.gov.au/pay/tax-and-superannuation#" target="_blank">award requires additional super</a> on top of the super guarantee (SG). If your award isn't listed, choose 'Other' then find it in the linked list of awards. If the award does not require additional super, you can choose whether to pay extra as an incentive to your employee.</p>
+
+                <div class="dynamic-display d-none">
+                    
+                    <div class="mb-5 p-0 form-example tool-output-box-include">
+                        <label for="additional-superannuation" class="form-label mb-3"><strong>How much extra super will you contribute? Enter as a percentage of your employee's base pay.</strong></label>
+
+                        <div class="textbox-units form-element-wrapper mb-4">
+                            <input type="text" class="form-control tool-output-box-input optional-clause m-0 sm-width" id="additional-superannuation" value="" required="" data-value="[number]" data-np-intersection-state="visible">
+                            <p class="m-0">%</p>
+                        </div>
+    
+                    </div>
+
+                </div>
+
+                {% include component-examples/tool-output-box-example.html
+                    title="Additional superannuation clause"
+                    tag="Optional to include"
+                    tag-type="optional"
+                    input-label="Include Additional superannuation clause (optional)"
+                    content="<p>In addition to the SG, we will contribute <strong><span data-answer='additional-superannuation'>[number]</span> percent</strong> of your base salary into super.</p>"
+                    id="additional-superannuation-clause"
+                    dynamic-toggle=true
+                %}
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <hr class="section-divider my-5" />
+
+
+
+        <!-- PENALTY RATES -->
+        <div id="section-penalty-rates" class="row remove-element-padding">
+
+            <h2>Penalty rates and overtime</h2>
+    
+            <div class="col-12 col-md-8 col-xl-7">
+    
+                <div class="question-section remove-element-padding">
+                   
+                    <p>Your employee may be entitled to overtime or penalty rates, depending on the hours they work. You must pay overtime or penalty rates if your employee is entitled to them, even if you do not include this clause.</p>
+    
+                    {% include component-examples/tool-output-box-example.html
+                        title="Penalty rates and overtime clause"
+                        tag="Optional to include"
+                        tag-type="optional"
+                        input-label="Include Penalty rates and overtime clause (optional)"
+                        content="<p>You may be entitled to overtime rates under your award if you work:</p>
+                        <ul>
+                        <li>more than your ordinary hours of work</li>
+                        <li>outside the spread of ordinary hours.</li>
+                        </ul>
+                        <p>You may be entitled to penalty rates or shift loadings according to your award if you work:</p>
+                        <ul>
+                        <li>on a weekend</li>
+                        <li>on a public holiday</li>
+                        <li>late night or early morning shifts.</li>
+                        </ul>"
+                        id="penalty-rates"
+                    %}
+    
+                </div>
+    
+    
+            </div>
+    
+            <div class="h-100 col-12 col-md-4  offset-xl-1">
+                {% include component-examples/info-sidebar-example.html
+                title="Rules vary between awards"
+                text="<p>The rules around penalty rates and overtime differ between awards. Check the award for details (including pay rates).</p>
+                <p>Find out more about penalty rates and overtime on the Fair Work Ombudsman website.</p>"
+                classes="inpage teal"
+                %}
+            </div>
+    
+        </div>
+    
+        <hr class="section-divider my-5" />
+
+
+
+
+    <!-- BUTTON GROUP -->
+    <div class="ecb-button-group">
+
+        <a class="bga-link bga-inline-link bkg-light" tabindex="0" href={{ 'prototypes/ecb/hours.html' | relative_url }} role="button">Previous</a>
+
+
+        <a class="bga-btn bga-primary-btn bkg-light" tabindex="0" href={{ 'prototypes/ecb/leave.html' | relative_url }} role="button">Next</a>
+
+        <a class="bga-btn bga-primary-btn bkg-light return-to-review d-none" tabindex="0" href={{ 'prototypes/ecb/review.html' | relative_url }} role="button">Return to review</a>
+
+    </div>
+
+
+
+</div>
+
+
+{% include prototypes/ecb-save-footer.html
+    title="Don't have time to finish your contract now?"
+    content="You can save you progress in this tool and return within the next seven days. We’ll email you a link that you can use to return and finish your contract."
+    button="Save and exit"
+    button-id="ecb-save-exit"
+    %}
+
+
+<!-- SAVE AND EXIT MODAL -->
+{% include prototypes/ecb-save-modal.html %}
+

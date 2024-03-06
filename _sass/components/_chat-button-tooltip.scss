@@ -1,0 +1,216 @@
+.chat-button-example-container {
+    position: relative;
+    min-height: 170px;
+
+    &:first-of-type {
+        border-bottom: solid 1px $bga-blue-border;
+    }
+}
+.tooltip-example-container {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;   
+}
+
+button.chat {
+    height: 56px;
+    width: auto;
+    padding: 0 67px 0 32px;
+    display: inline-flex;
+    align-items: center;
+    z-index: 9000;
+    border-radius: 60px;
+    box-shadow: $bga-btn-boxshadow;
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    color: $bga-black;
+    
+
+    &.example {
+        position: absolute;
+    }
+
+    span {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    &.open {
+        background: url(../assets/icon-chat-open.svg) #ACFF98 no-repeat;
+        background-position: right 32px center;
+        border: solid #348621 3px;
+
+        &:focus-visible {
+            background-image: url(../assets/icon-chat-open-white.svg);
+            background-color: #068905;
+            color: $bga-white;
+            border: $bga-component-focus-border; 
+        }
+        &:hover {
+            background-image: url(../assets/icon-chat-open-white.svg);
+            background-color: #068905;
+            color: $bga-white;
+            border: solid #348621 3px;
+        }
+        &:active {
+            background-image: url(../assets/icon-chat-open-white.svg);
+            background-color: #276718;
+            color: $bga-white;
+            border: solid #276718 3px;
+        }
+    }
+
+    &.closed {
+        background: url(../assets/icon-chat-closed.svg) $bga-blue-black-lightest no-repeat;
+        border: solid $bga-blue-black-light 3px;
+        background-position: right 32px center;
+    }
+    &.non-branded {
+        border: solid 2px $bga-black;
+        background: url(../assets/Img-icon-placeholder.svg)$nb-grey-light no-repeat !important;
+        background-position: right 32px center !important;
+        background-size: 27px !important;
+        border-radius: 8px;
+
+        &:focus-visible {
+            border-color: $nb-blue-links;
+            color: $bga-black;
+        }
+        &:hover {
+            border-color: $bga-black;
+            color: $bga-black;
+            background: $nb-grey-lightest;
+        }
+
+    }
+}
+.msg-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.tooltip {
+    display: none;
+    z-index: 9000;
+    width: 100%;
+    max-width: 300px;
+    background: $bga-white;
+    border: 3px solid $bga-blue-black-light;
+    border-radius: 4px;
+    box-shadow: $bga-btn-boxshadow;
+    position: fixed;
+    right: 24px;
+    bottom: 94px;
+
+    .close {
+        display: block;
+        border: none;
+        background: transparent;
+        outline: none;
+        padding: 0;
+        margin: 0;
+        min-height: auto;
+    }
+
+    &.example {
+        position:absolute;
+    }
+    span.arrow {
+        background-color: $bga-white;
+        border-bottom: 3px solid $bga-blue-black-light;
+        border-right: 3px solid $bga-blue-black-light;
+        height: 16px;
+        width: 16px;
+        position: absolute;
+        bottom: -18px;
+        right: 2rem;
+        transform: translate(-50%, -50%) rotate(45deg);
+        z-index: 900;
+    }
+
+    &.centered {
+        right: auto;
+        bottom: 70px;
+        width: auto;
+
+        span.arrow {
+            right: calc(50% - 16px);
+        }
+    }
+
+    &.show {
+        display: block;
+        opacity: 1;
+    }
+    &.non-branded {
+        border: 1px solid $bga-black;
+
+        span.arrow {
+            border-bottom: 1px solid $bga-black;
+            border-right: 1px solid $bga-black;
+            bottom: -16px;
+        }
+
+        a {
+            color: $nb-blue-links;
+
+            &:focus-visible {
+                color: $nb-blue-links;
+                border: $nb-blue-links solid 2px;
+                border-radius: $bga-focus-radius;
+                background: transparent;
+            }
+            &:hover {
+                color: $nb-blue-links;
+                background: transparent;
+            }
+        }
+    }
+}
+
+
+@mixin chat-button-below768 {
+    button.chat {
+        text-indent: -9999px;
+        height: 48px;
+        width: 48px;
+        padding: 0;
+        right: 16px;
+        bottom: 16px;
+
+        &.open,
+        &.closed {
+            background-position: top 10px center;
+            background-size: 24px 24px;
+        }
+
+        &.non-branded {
+            background-position: center center !important;
+        }
+    }
+    .msg-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+    .tooltip {
+        bottom: 78px;
+        right: 16px;
+
+        &.centered {
+            bottom: 62px;
+        }
+    }
+}
+
+// SMALLER SCREENS display. Using classes instead of media queries because both breakpoint toggles and small size screens need to be taken into account.
+.component-example.bp-below768, .component-example.small-screen {
+    @include chat-button-below768();
+}
+
+// Media queries for HTML example pages.
+@media (max-width: 768px) {
+    @include chat-button-below768();
+}

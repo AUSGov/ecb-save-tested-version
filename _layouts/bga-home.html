@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+{% include head.html %}
+
+<body {% if page.id %} id="{{page.id}}" {% endif %}>
+   
+    {% include component-examples/pathway-to-services-example.html %}
+   
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="header-wrapper mt-5 mb-4">
+                    {% include prototypes/bga-site-header-example.html %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="banner-background pb-5">
+        <div class="spacer"></div>
+    <div class="container">
+        <div id="home-banner">
+             <div class="row">
+                 <div class="col-12 banner-container">
+                     <div class="banner-content">
+                         <h1>Support for businesses in Australia</h1>
+
+                         <p class="lead">Information, grants, services and support from across government to help your business succeed.</p>
+                     </div>
+                     <div class="banner-image"><img src={{ "/assets/lady_man_open_sign.jpg" | relative_url }} alt="A man and a woman outside a shopfront holding up a sign that reads open."></div>
+                 </div>
+             </div>
+         </div>
+        <div id="alert">
+            <div class="row">
+
+                <div class="col-12">
+                    <div class="">
+                        <a  tabindex=0 class="alert-container">
+                            <h2>Coronavirus support</h2>
+                            <p>Find financial assistance, eligibility and timing for the new government support for Australian businesses.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="menu-highlight">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Business information</h2>
+                    <ul class="business-info">
+                        <li tabindex=0><a>Planning</a></li>
+                        <li tabindex=0 ><a>Finance</a></li>
+                        <li tabindex=0 ><a>Marketing</a></li>
+                        <li tabindex=0 ><a>Online</a></li>
+                        <li tabindex=0 ><a>People</a></li>
+                        <li tabindex=0 ><a>Products and services</a></li>
+                        <li tabindex=0 ><a>Risk management</a></li>
+                        <li tabindex=0 ><a>Change and growth</a></li>
+                        <li tabindex=0 ><a>Exiting</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+     </div>
+    </div>
+
+            {{ content }}
+
+    <div id="footer">
+        {% include component-examples/bga-site-footer-example.html %}
+    </div>
+
+
+    {% include prototypes/inactive-feature-modal.html %}
+
+
+
+    <!-- LOOP11 TEST SCRIPT -->
+    <script src="//cdn.loop11.com/embed.js" type="text/javascript" async="async"></script>
+
+    
+</body>
+</html>
+
+
+

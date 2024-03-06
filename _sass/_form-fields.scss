@@ -1,0 +1,39 @@
+.fieldset-wrapper {
+    border: solid 1px $bga-blue-black-dark;
+
+    .bga-form-text {
+        margin-bottom: 16px;
+    }
+    .h4-style {
+        color: $bga-blue-black-dark;
+        font-size: 1.1875rem;
+        line-height: 1.5;
+    }
+
+    &.teal {
+        border: none;
+        background: $bga-teal-highlight-light;
+
+        .field-header {
+            background: $bga-teal-highlight-mid;
+        }        
+    }
+
+}
+.recaptcha {
+    p, a {
+        font-size: 0.875rem;
+        opacity: .85; 
+    }
+}
+
+
+// MOBILE display. Using classes instead of media queries because both breakpoint toggles and small size screens need to be taken into account.
+
+.component-example.bp-below992 {
+    .fieldset-wrapper {
+        .col-lg-6 {
+            width: 100% !important;
+        }
+    }
+}

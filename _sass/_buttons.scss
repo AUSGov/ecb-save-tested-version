@@ -1,0 +1,538 @@
+.element-state-wrapper {
+    border-top: solid 1px $bga-blue-border;
+}
+
+.bga-primary-btn, .bga-secondary-btn {
+    min-width: 120px;
+}
+.bga-btn,
+.bga-btn-state {
+    display: inline-flex;
+    align-items: center;
+    border: solid 3px $bga-yellow-highlight-shadow;
+    border-radius: 100px;
+    background: $bga-yellow-highlight-dark;
+    color: $bga-black;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 8px 32px;
+    min-height: 56px;
+    box-shadow: $bga-btn-boxshadow;
+    justify-content: center;
+    text-decoration: none !important;
+    
+    svg {
+        margin-left: 8px;
+        margin-bottom: 0;
+        fill: $bga-black;
+        flex-shrink: 0;
+    }
+
+
+    &.bga-secondary-btn {
+        background: $bga-white;
+        border-color: $bga-blue-background-dark;
+        color: $bga-black;
+
+        &.bkg-dark {
+            border-color: $bga-blue-border;
+            color: $bga-black;
+        }
+    }
+}
+
+.bga-btn {
+    &:focus {
+        border-color: $bga-blue-focus;
+        border-width: 3px;
+        border-radius: 50px;
+        background: $bga-yellow-links-background;
+        color: $bga-black;
+        outline: none;
+
+        &.bga-secondary-btn {
+            border-color: $bga-blue-links;
+
+            background: $bga-blue-links;
+            color: $bga-white;
+            
+            svg, svg path {
+                fill: $bga-white;
+            }
+        }
+        
+        &.bkg-dark {
+            background: $bga-white;
+            border-color: $bga-yellow-links-background;
+            
+            &.bga-secondary-btn {
+                color: $bga-white;
+                background: $bga-blue-links;
+                border-color: $bga-white;
+            }
+        }
+
+    }
+
+    &:hover {
+        border-color: $bga-yellow-links-background;
+        background: $bga-yellow-links-background;
+        color: $bga-black;
+
+        &.bga-secondary-btn {
+            border-color: $bga-blue-background-dark;
+            background: $bga-blue-background-dark;
+            color: $bga-white;
+            
+            svg, svg path {
+                fill: $bga-white;
+            }
+        }
+        
+        &.bkg-dark {
+            color: $bga-black;
+            
+            &.bga-secondary-btn {
+                border-color: $bga-white;
+                color: $bga-white;
+                 background: $bga-blue-links;
+            }
+        }
+    }
+
+    &:active {
+        border-color: $bga-yellow-highlight-shadow;
+        background: $bga-yellow-highlight-shadow;
+
+        &.bga-secondary-btn {
+            border-color: $bga-blue-footer;
+            background: $bga-blue-footer;
+            color: $bga-white;
+            
+            svg, svg path {
+                fill: $bga-white;
+            }
+        }
+        
+        &.bkg-dark {
+            border-color: $bga-yellow-highlight-shadow;
+            background: $bga-yellow-highlight-shadow;
+            
+            &.bga-secondary-btn {
+                border-color: $bga-white;
+                background: $bga-blue-footer;
+                color: $bga-white;
+            }
+        }
+    }
+    &.disabled {
+        opacity: .65;
+        cursor: default;
+    }
+}
+
+.bga-btn-state {
+    &.default {
+        &.bkg-dark {
+            color: $bga-black;
+        }
+    }
+
+    &.focus {
+        border-color: $bga-blue-focus;
+        background: $bga-yellow-links-background;
+        outline: none;
+
+        &.bga-secondary-btn {
+            border-color: $bga-blue-links;
+            background: $bga-blue-links;
+            color: $bga-white;
+            
+            svg, svg path {
+                fill: $bga-white;
+            }
+        }
+        
+        &.bkg-dark {
+            background: $bga-white;
+            border-color: $bga-yellow-links-background;
+            color: $bga-black;
+            
+            &.bga-secondary-btn {
+                color: $bga-white;
+                background: $bga-blue-links;
+                border-color: $bga-white;
+            }
+        }
+
+    }
+
+    &.hover {
+        border-color: $bga-yellow-links-background;
+        background: $bga-yellow-links-background;
+
+        &.bga-secondary-btn {
+            border-color: $bga-blue-background-dark;
+            background: $bga-blue-background-dark;
+            color: $bga-white;
+            
+            svg, svg path {
+                fill: $bga-white;
+            }
+        }
+        
+        &.bkg-dark {
+            color: $bga-black;
+            
+            &.bga-secondary-btn {
+                border-color: $bga-white;
+                color: $bga-white;
+                background: $bga-blue-links;
+            }
+        }
+    }
+
+    &.active {
+        border-color: $bga-yellow-highlight-shadow;
+        background: $bga-yellow-highlight-shadow;
+
+        &.bga-secondary-btn {
+            border-color: $bga-blue-footer;
+            background: $bga-blue-footer;
+            color: $bga-white; 
+            
+            svg, svg path {
+                fill: $bga-white;
+            }
+        }
+        
+        &.bkg-dark {
+            color: $bga-black;
+            
+            &.bga-secondary-btn {
+                border-color: $bga-white;
+                background: $bga-blue-footer;
+                color: $bga-white;
+            }
+        }
+    }
+
+    &.disabled {
+        opacity: .65;
+
+        &.bkg-dark {
+            color: $bga-black;
+        }
+    }
+}
+
+.bga-link,
+.bga-link-state {
+    color: $bga-blue-links;
+    font-weight: 600;
+    text-decoration: underline;
+    font-size: 1rem;
+    line-height: 1.75;
+    display: inline-block;
+    
+    /*
+    &.bkg-dark {
+        color: $bga-white;
+    }
+    */
+
+    &.bga-tertiary-link {
+        font-size: 1.125rem;
+        line-height: 2rem;
+        background: url(../assets/icon-tertiary-arrow.svg) no-repeat;
+        background-position: left 0 top 0;
+        padding-left: 40px;
+        text-decoration: none;
+        
+        &.plus-icon {
+            background: url(../assets/plus-circle-right-blue.svg) no-repeat;
+            background-position: left 0 top 0;
+        }
+        /*
+        &.bkg-dark {
+            background: url(../assets/icon-tertiary-arrow-darkbg.svg) no-repeat;
+            background-position: left - top 0;
+            
+            &.plus-icon {
+                background: url(../assets/plus-circle-right-lightblue.svg) no-repeat;
+                background-position: left 0 top 0;
+            }
+        }
+        */
+    }
+}
+
+.bga-link {
+    &:focus {
+        border: $bga-text-focus-border;
+        background:$bga-blue-hover;
+        border-radius: $bga-focus-radius;
+        outline: none;
+        color: $bga-blue-footer;
+
+        &.bga-tertiary-link {
+            background: url(../assets/icon-tertiary-arrow-hover.svg) no-repeat;
+            background-position: left 0 top 0;
+            color: $bga-blue-footer;
+            
+            &.plus-icon {
+                background: url(../assets/plus-circle-right-drkblue.svg) no-repeat;
+                background-position: left 0 top 0;
+            }
+        }
+        /*
+        &.bkg-dark {
+            color: $bga-blue-links;
+            border: solid 2px $bga-blue-background-extralight;
+            
+            &.bga-tertiary-link {
+                background: url(../assets/icon-tertiary-arrow-hover-darkbg.svg) no-repeat;
+                background-position: left 0 top 0;
+                border: solid 2px $bga-white;
+                color: $bga-white;
+                
+                &.plus-icon {
+                    background: url(../assets/plus-circle-right-white.svg) no-repeat;
+                    background-position: left 0 top 0;
+                }
+            }
+        }
+        */
+
+    }
+
+    &:hover {
+        background: $bga-blue-hover;
+        color: $bga-blue-footer;
+
+        &.bga-tertiary-link {
+            background: url(../assets/icon-tertiary-arrow-hover.svg) no-repeat;
+            background-position: left 0 top 0;
+            color: $bga-blue-footer;
+            
+            &.plus-icon {
+                background: url(../assets/plus-circle-darkestblue.svg) no-repeat;
+                background-position: left 0 top 0;
+            }
+        }
+        /*
+        &.bkg-dark {
+            color: $bga-blue-footer;
+            
+            &.bga-tertiary-link {
+                background: url(../assets/icon-tertiary-arrow-hover-darkbg.svg) no-repeat;
+                background-position: left 0 top 0;
+                color: $bga-white;
+                
+                &.plus-icon {
+                    background: url(../assets/plus-circle-right-white.svg) no-repeat;
+                    background-position: left 0 top 0;
+                }
+            }
+        }
+        */
+    }
+
+    &:active {
+        background: $bga-blue-hover;
+        color: $bga-blue-footer;
+        border: none;
+
+        &.bga-tertiary-link {
+            background: url(../assets/icon-tertiary-arrow-active.svg) no-repeat;
+            background-position: left 0 top 0;
+            
+            &.plus-icon {
+                background: url(../assets/plus-circle-reverse.svg) no-repeat;
+                background-position: left 0 top 0;
+            }
+        }
+        /*
+        &.bkg-dark {
+            color: $bga-blue-footer;
+            
+            &.bga-tertiary-link {
+                background: url(../assets/icon-tertiary-arrow-active-dark-bg.svg) no-repeat;
+                background-position: left 0 top 0;
+                color: $bga-white;
+                
+                &.plus-icon {
+                    background: url(../assets/plus-circle-reverse_drkbkg.svg) no-repeat;
+                    background-position: left 0 top 0;
+                }
+            }
+        }
+        */
+    }
+}
+
+.bga-link-state {
+    &.focus {
+        border: $bga-text-focus-border;
+        background: $bga-blue-hover;
+        border-radius: $bga-focus-radius;
+        outline: none;
+        color: $bga-blue-footer;
+
+        &.bga-tertiary-link {
+            background: url(../assets/icon-tertiary-arrow-hover.svg) no-repeat;
+            background-position: left 0 top 0;
+            color: $bga-blue-footer;
+        }
+        /*
+        &.bkg-dark {
+            color: $bga-blue-footer;
+            border: solid 2px $bga-blue-background-extralight;
+            
+            &.bga-tertiary-link {
+                background: url(../assets/icon-tertiary-arrow-hover-darkbg.svg) no-repeat;
+                background-position: left 0 top 0;
+                border: solid 2px $bga-white;
+                color: $bga-white;
+            }
+        }
+        */
+    }
+
+    &.hover {
+        background: $bga-blue-hover;
+        color: $bga-blue-footer;
+
+        &.bga-tertiary-link {
+            background: url(../assets/icon-tertiary-arrow-hover.svg) no-repeat;
+            background-position: left 0 top 0;
+            color: $bga-blue-footer;
+        }
+        /*
+        &.bkg-dark {
+            color: $bga-blue-links;
+            
+            &.bga-tertiary-link {
+                background: url(../assets/icon-tertiary-arrow-hover-darkbg.svg) no-repeat;
+                background-position: left 0 top 0;
+                color: $bga-white;
+            }
+        }
+        */
+    }
+
+    &.active {
+        background: $bga-blue-hover;
+        color: $bga-blue-footer;
+
+        &.bga-tertiary-link {
+            background: url(../assets/icon-tertiary-arrow-active.svg) no-repeat;
+            background-position: left 0 top 0;
+        }
+        /*
+        &.bkg-dark {
+            color: $bga-blue-links;
+            
+            &.bga-tertiary-link {
+                background: url(../assets/icon-tertiary-arrow-active-dark-bg.svg) no-repeat;
+                background-position: left 0 top 0;
+                color: $bga-white;
+                border: none;
+            }
+        }
+        */
+    }
+
+    &.disabled {
+        opacity: .65;
+    }
+}
+
+.button-group {
+    display: flex;
+    column-gap: 24px;
+    row-gap: 24px;
+    align-items: center;
+}
+
+// Modify Bootstrap buttons when they are used
+.btn-primary {
+    background: $bga-yellow-highlight-dark;
+    border: solid 3px $bga-yellow-highlight-shadow;
+    color: $bga-black;
+
+    &:focus,
+    &:focus-visible {
+        background: $bga-yellow-links-background;
+        border-color: $bga-blue-background-dark;
+        box-shadow: none;
+        color: $bga-black;
+        border-radius: 50px;
+        border-width: 3px;
+    }
+
+    &:hover {
+        background: $bga-yellow-links-background;
+        border-color: $bga-yellow-links-background;
+        box-shadow: none;
+        color: $bga-black;
+    }
+
+    &:active {
+        background: $bga-yellow-highlight-shadow;
+        border-color: $bga-yellow-highlight-shadow;
+        box-shadow: none;
+        color: $bga-black;
+    }
+}
+
+.btn-check:checked + .btn-primary:focus,
+.btn-check:active + .btn-primary:focus,
+.btn-primary:active:focus,
+.btn-primary.active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+    box-shadow: none;
+}
+
+
+// Mixins for smaller screen sizes and media queries
+@mixin button-below576 {
+    .bga-primary-btn, .bga-secondary-btn {
+        min-width: 80px;
+    }
+    .bga-btn,
+    button,
+    .bga-btn-state {
+        font-size: .875rem;
+        line-height: 1.125rem;
+        padding: 8px 24px;
+        min-height: 48px;
+    }
+    .bga-link, .bga-link-state {
+        &.bga-tertiary-link {
+            font-size: .875rem;
+            line-height: 1.125rem;
+            min-height: 32px;
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+
+// MOBILE display. Using classes instead of media queries because both breakpoint toggles and small size screens need to be taken into account.
+.component-example.bp-below576 {
+    @include button-below576();
+}
+
+// Media queries for HTML demo pages
+@media (max-width: 576px) {
+    @include button-below576();
+}
+
+@media (max-width: 350px) {
+    .button-example {
+        width: 100%; 
+    }
+}

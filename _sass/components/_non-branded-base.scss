@@ -1,0 +1,130 @@
+.bga-component.non-branded, .non-branded {
+    border: none;
+
+    &.nb-border {
+        border: 1px solid $nb-grey-dark;
+    }
+
+    &.nb-background {
+        background: $nb-grey-light;
+    }
+    &.nb-background-dark {
+        background: $bga-black;
+    }
+    
+
+    // TYPOGRAPHY
+    h1, h2, h3, h4, h5, h6 {
+        color: $bga-black;
+    }
+
+    a,
+    .tile-title {
+        color: $nb-blue-links;
+
+        &:focus-visible {
+            color: $nb-blue-links;
+            border: $nb-blue-links solid 2px;
+            border-radius: $bga-focus-radius;
+            background: transparent;
+        }
+        &:hover {
+            color: $nb-blue-links;
+            background: transparent;
+        }
+    }
+    a.external {
+        background-image: none;
+        padding-right: 0;
+    }
+
+    // BUTTONS
+    button {
+        &:focus-visible {
+            color: $bga-black;
+        }
+        &:hover, &:active {
+            color: $bga-black;
+            background: $nb-grey-lightest;
+        }
+    }
+    .bga-btn {
+        border: solid 2px $bga-black;
+        background: $nb-grey-light;
+        border-radius: 8px;
+
+        &.bga-secondary-btn {
+            background: $bga-white;
+            border-color: $nb-grey-extra-darkest;
+        }
+
+        &:focus-visible {
+            border-color: $nb-blue-links;
+            color: $bga-black;
+        }
+        &:hover {
+            border-color: $bga-black;
+            color: $bga-black;
+            background: $nb-grey-lightest;
+        }
+
+    }
+
+    // FORM ELEMENTS
+    .form-select {
+        border:$bga-black solid 1px;
+
+        &:focus-visible {
+            border: solid 2px $nb-blue-links;
+        }
+    }
+    input.form-control {
+        &:focus-visible {
+            border: solid 2px $nb-blue-links;
+        }
+    }
+    .checkboxes [type=checkbox]:checked {
+        background: #ffffff url(../assets/icon-tick-black.svg) no-repeat center center;
+        border: solid 3px $bga-black !important;
+
+        + label {
+            color: $bga-black;
+        }
+    }
+    
+
+
+    // COMPONENTS
+    .component-content {
+        border: none;
+    }
+    .component-text p {
+        color: $bga-black;
+    }
+
+    .icon-wrapper {
+        min-width: auto;
+        min-height: auto;
+        height: auto;
+        width: auto;
+        padding: 0;
+
+        p {
+            padding: 0;
+        }
+        
+        .external-site {
+            min-height: auto;
+        }
+    }
+    .arrow-icon {
+        background: transparent;
+        height: auto;
+        width: auto;
+
+        img {
+            max-width: none;
+        }
+        
+    }
+}

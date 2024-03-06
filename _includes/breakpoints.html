@@ -1,0 +1,60 @@
+<div class="breakpoints m-0 p-4">
+
+    {% if include.singlebp == "true" %}
+    <p class="pe-3 m-0">All breakpoints</p>
+    
+    {% else %}
+    <div class="larger-screens">
+        <p class="pe-3 m-0">{{ include.example-name }}Breakpoints:</p>
+
+        <fieldset id="{{include.element-string}}-group">
+
+            <div class="btn-toolbar" role="toolbar">
+
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+
+                {% if include.xl-visibility == "true" %}    
+                    <input tabindex=-1 type="radio" class="btn-check bp-xl {{ include.xl-visibility }}" name="{{include.element-string}}-group" id="{{include.element-string}}-bp-xl" autocomplete="off" data-breakpoint="bp-1200">
+                    <label tabindex=0 class="btn btn-outline-primary bp-xl py-2 px-3 {{ include.xl-visibility }}" for="{{include.element-string}}-bp-xl">≥1200px (xl)</label>
+                {% endif %}
+                
+                {% if include.lg-visibility == "true" %}  
+                    <input tabindex=-1 type="radio" class="btn-check bp-lg {{ include.lg-visibility }}" name="{{include.element-string}}-group" id="{{include.element-string}}-bp-lg" autocomplete="off" data-breakpoint="bp-992">
+                    <label tabindex=0 class="btn btn-outline-primary bp-lg py-2 px-3 {{ include.lg-visibility }}" for="{{include.element-string}}-bp-lg">≥992px (lg)</label>
+                {% endif %}
+
+                {% if include.md-visibility == "true" %}      
+                    <input tabindex=-1 type="radio" class="btn-check bp-md {{ include.md-visibility }}" name="{{include.element-string}}-group" id="{{include.element-string}}-bp-md" autocomplete="off" data-breakpoint="bp-768">
+                    <label tabindex=0 class="btn btn-outline-primary bp-md py-2 px-3 {{ include.md-visibility }}" for="{{include.element-string}}-bp-md">≥768px (md)</label>
+                {% endif %}
+
+                {% if include.sm-visibility == "true" %}      
+                    <input tabindex=-1 type="radio" class="btn-check bp-sm {{ include.sm-visibility }}" name="{{include.element-string}}-group" id="{{include.element-string}}-bp-sm" autocomplete="off" data-breakpoint="bp-576">
+                    <label tabindex=0 class="btn btn-outline-primary bp-sm py-2 px-3 {{ include.sm-visibility }}" for="{{include.element-string}}-bp-sm">≥576px (sm)</label>
+                {% endif %}
+
+                {% if include.xs-visibility == "true" %}      
+                    <input tabindex=-1 type="radio" class="btn-check bp-xs {{ include.xs-visibility }}" name="{{include.element-string}}-group" id="{{include.element-string}}-bp-xs" autocomplete="off" data-breakpoint="bp-350">
+                    <label tabindex=0 class="btn bp-xs btn-outline-primary py-2 px-3 {{ include.xs-visibility }}" for="{{include.element-string}}-bp-xs">≥350px (xs)</label>
+                {% endif %}
+
+                    
+                <input tabindex=-1 type="radio" class="btn-check {{ include.final-visibility }}" name="{{include.element-string}}-group" id="{{include.element-string}}-bp-final" autocomplete="off" data-breakpoint="bp-below{{include.breakpoint-final}}">
+                <label tabindex=0 class="btn btn-outline-primary py-2 px-3 {{ include.final-visibility }}" for="{{include.element-string}}-bp-final">&lt;{{ include.breakpoint-final}}px</label>
+
+                </div>
+
+            </div>
+
+        </fieldset>
+    </div>
+
+    <div class="smaller-screens remove-element-padding">
+        <h4>Currently displaying the mobile design.</h4>
+        <p>To see designs for other breakpoints please view this page on a larger screen.</p>
+    </div>
+
+    {% endif %}
+
+</div>
+

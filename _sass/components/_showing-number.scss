@@ -1,0 +1,168 @@
+.showing-header-wrapper {
+
+    .showing-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding: 32px 16px;
+    }
+        
+        h2.showing-number {
+        font-size: 1.75rem;
+        font-weight: 400;
+        margin: 0;
+        
+        span {
+            font-weight: 600;
+        }
+    }
+    .bga-secondary-btn {
+        &:focus-visible, &:focus, &:hover, &:active {
+            svg path {
+                fill: $bga-white;
+            }
+        }
+    }
+    .filter-toggle {
+        display: none;
+    }
+
+    &.fixed {
+        position: fixed;
+        background: $bga-teal-highlight-light;
+        top: 0;
+        z-index: 8500;
+        width: 100%;
+        box-shadow: 2px 2px 3px 0px rgba(51, 51, 51, 0.2);
+        transition: top 1s linear;
+    }
+}
+.showing-page.fixed {
+    padding-top: 140px;
+}
+#showing-filters-modal {
+    display: none;
+
+    &.show {
+        display: block;
+        position: fixed;
+        width: calc(100% - 32px);
+        top: 1rem;
+        left: 16px;
+        max-height: none;
+        max-width: none;
+        height: calc(100% - 32px);
+    }
+
+    .clear-filters {
+        a {
+            color: $bga-black !important;  
+        } 
+        svg {
+            width: 16px !important;
+            height: 16px !important;
+        }
+    }
+}
+
+// Mixins for smaller screen sizes
+@mixin showing-number-below576 () {
+    .showing-header-wrapper {
+        .bga-secondary-btn {
+           svg {
+                display: none;
+           }
+        }
+    }
+}
+
+// SMALLER SCREENS display. Using classes instead of media queries because both breakpoint toggles and small size screens need to be taken into account.
+.component-example.bp-below576 {
+    @include showing-number-below576();
+}
+
+
+@media( max-width: 768px) {
+    .showing-header-wrapper {
+        .showing-header {
+            padding: 16px 16px;
+            flex-wrap: wrap;
+        }
+
+        h2.showing-number {
+            font-size: 1rem;
+            width: 100%;
+            margin-bottom: 16px;
+        }
+        .buttons-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row-reverse;
+        }
+        .button-example, .filter-toggle {
+            width: 49%;
+            display: block; 
+            
+            &.full-width {
+                width: 100%;
+            }
+
+        }
+        .filter-toggle button, .bga-secondary-btn {
+            background: $bga-blue-black-lightest;
+            font-weight: 400;
+            font-size: 1rem;
+            text-transform: uppercase;
+            height: 48px;
+            min-height: auto;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            border: none;
+            border-radius: 0px;
+            box-shadow: none;
+            justify-content: center;
+            color: $bga-black;
+
+            span {
+                background: $bga-blue-background-dark;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                height: 20px;
+                width: 20px;
+                border-radius: 50px;
+                margin-left: 8px;
+                font-size: .75rem;
+                font-weight: 700;
+                color: $bga-white;
+            }
+
+           
+            &:focus-visible, &:focus, &:hover, &:active {
+                background: $bga-blue-black-lightest;
+                color: $bga-black;
+
+                svg path {
+                    fill: $bga-black;
+                }
+            }
+        }
+        &.fixed {
+            padding: 0 0 16px 0;
+            box-shadow: 2px 2px 3px 0px rgba(51, 51, 51, 0.2);
+            z-index: 8900;
+
+            .filter-toggle button, .bga-secondary-btn {
+                background: $bga-white !important;
+            }
+        }
+
+    }
+}
+
+@media (max-width: 576px) {
+    @include showing-number-below576();
+}

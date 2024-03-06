@@ -1,0 +1,135 @@
+.disclaimer {
+    &.visible {
+        border-top: $bga-blue-black-light solid 1px;
+        border-bottom: $bga-blue-black-light solid 1px;
+    }
+
+    .component-content {
+        display: flex;
+        align-content: flex-start;
+    }
+
+    .icon-wrapper {
+        background: $bga-blue-background-dark;
+        border-radius: 40px;
+        height: 20px;
+        width: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    h4,
+    p,
+    li,
+    a {
+        font-size: 0.8125rem;
+        line-height: 1.4rem;
+        margin: 0 0 16px 0;
+    }
+
+    li {
+        margin: 0 0 8px 0;
+
+        &:last-of-type {
+            margin: 0 0 16px 0;
+        }
+    }
+
+    .accordion.disclaimer {
+        border-top: $bga-blue-black-light solid 1px;
+        border-bottom: $bga-blue-black-light solid 1px;
+
+        p {
+            display: block;
+            width: 100%;
+        }
+
+        .accordion-item {
+            border: none;
+            background: transparent;
+
+            &:last-of-type {
+                border-bottom: none;
+
+                .accordion-button {
+                    border-radius: 0;
+                }
+            }
+
+            &:first-of-type {
+                .accordion-button {
+                    border-radius: 0;
+                }
+            }
+
+            &:focus-visible {
+                outline: none;
+
+            }
+
+            .accordion-button {
+                background: transparent;
+                font-weight: 600;
+                color: $bga-black;
+                justify-content: space-between;
+
+                &:not(.collapsed) {
+                    background: transparent;
+                    box-shadow: none;
+                }
+
+                &::after {
+                    background-image: url(../assets/Chevron-down-black.svg);
+                    background-position: center center;
+                    margin: auto 0;
+                    background-size: 16px 10px;
+                    width: 16px;
+                    height: 10px;
+                }
+
+                &:focus {
+                    box-shadow: none;
+                }
+
+                &:focus-visible {
+                    border: $bga-component-focus-border;
+                    border-radius: $bga-focus-radius;
+                }
+
+                &:hover {
+                    background-color:transparent;
+                    text-decoration: underline;
+                }
+
+            }
+            .accordion-body {
+                padding-left: 28px;
+            }
+        }
+    }
+    &.coloured-bkg {
+        &.visible, .accordion.disclaimer {
+            border-top: $bga-blue-black-mid solid 1px;
+            border-bottom: $bga-blue-black-mid solid 1px;
+        }
+    }
+
+    &.non-branded {
+        &.visible {
+            border-top: $nb-grey-dark solid 1px;
+            border-bottom: $nb-grey-dark solid 1px;
+        }
+        .accordion.disclaimer {
+            border-top: $nb-grey-dark solid 1px;
+            border-bottom: $nb-grey-dark solid 1px;
+        }
+        .icon-wrapper {
+            width: 20px;
+            height: 20px;
+            background: transparent;
+       } 
+    }
+
+}

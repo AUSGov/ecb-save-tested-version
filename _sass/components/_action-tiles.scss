@@ -1,0 +1,244 @@
+.bga-component.action-tile {
+    .component-content {
+        display: flex;
+    }
+    .component-title {
+        min-height: 340px;
+        width: 250px;
+        background: $bga-blue-background-light;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        justify-content: center;
+
+        h3 {
+            text-align: center;
+        }
+
+        .img-wrapper {
+            background: $bga-white;
+            border-radius: 100px;
+            width: 180px;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+
+        }
+        
+    }
+    .component-text {
+        width: calc(100% - 250px);
+        background: $bga-blue-black-background-lightest;
+
+        h4 {
+            margin-bottom: 8px;
+        }
+
+        p, li {
+            margin-bottom: 8px;
+        }
+
+        ul, ol {
+            padding: 0 0 0 16px;
+        }
+    }
+
+    .action-tile-accordion {
+        border-top: $bga-blue-black-light solid 1px;
+        .accordion-item {
+            background: $bga-white;
+            border: none;
+            border-radius: none;
+            border-bottom: $bga-blue-black-light solid 1px;
+
+            &:focus-visible {
+                outline: none; 
+            }
+
+            &:hover {
+                border-bottom: $bga-blue-black-light solid 1px;
+            }
+            &.show {
+                border-bottom: $bga-blue-black-light solid 1px;
+            }
+        }
+        .accordion-button {
+            border: none;
+
+            &::after {
+                background-image: url(../assets/Chevron-down-black.svg);
+                width: 16px;
+                height: 10px;
+                background-size: 16px 10px;
+                box-shadow: none;
+                background-color: transparent;
+                border-radius: 0;
+            }
+            &:focus {
+                border: none;
+                box-shadow: none;
+            } 
+            &:focus-visible {
+                border: $bga-component-focus-border;
+                border-radius: $bga-focus-radius;
+                background: $bga-white;
+                outline: none;
+            }   
+            &:hover {
+                background: $bga-blue-black-lightest;
+                text-decoration: underline;
+                text-decoration-color: $bga-blue-black-dark;
+                
+                &::after {
+                    background-color: transparent;
+                }
+            }
+            &:not(.collapsed) {
+                box-shadow: none;
+                background: $bga-white;
+    
+                &:hover {
+                    border-bottom: none;
+                    background: $bga-white;
+                    text-decoration: underline;
+                    text-decoration-color: $bga-blue-black-dark;
+                }
+                &::after {
+                    box-shadow: none;
+                    background-color: transparent;
+                    transform: scaleY(-1);
+                }
+            }
+        }
+        .accordion-body {
+            ul {
+                padding: 0 0 8px 16px;
+
+                li {
+                    margin-bottom: 8px;
+                    text-indent: -16px;
+
+                    &::before {
+                        padding: 0 8px 0 0;
+                    }
+                }
+            }
+            ol {
+                padding: 0 0 8px 16px;
+            }
+            > *:last-child {
+                padding-bottom: 0;
+                margin-bottom: 0;
+
+                li:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+        }
+    }
+
+    &.blue {
+        .component-title {
+            background: $bga-blue-highlight-mid;
+        }
+    }
+    &.green {
+        .component-title {
+            background: $bga-green-highlight-mid;
+        }
+    }
+    &.teal {
+        .component-title {
+            background: $bga-teal-highlight-mid;
+        }
+    }
+    &.yellow {
+        .component-title {
+            background: $bga-yellow-highlight-dark;
+        }
+    }
+    &.orange {
+        .component-title {
+            background: $bga-orange-highlight-mid;
+        }
+    }
+    &.purple {
+        .component-title {
+            background: $bga-purple-highlight-mid;
+        }
+    }
+
+    &.non-branded {
+        .component-title {
+            background: $nb-grey-dark;
+
+            .img-wrapper {
+                background: transparent;
+                border-radius: 0;
+            }
+        }
+        .component-text {
+            background: $nb-grey-lightest;
+        }
+        .action-tile-accordion {
+            border-top: $bga-black solid 1px;
+            .accordion-item {
+                border-bottom: $bga-black solid 1px;
+
+                &:hover, &.show {
+                    border-bottom: $bga-black solid 1px;
+                }
+            }
+            .accordion-button {
+                &:hover {
+                    background: $nb-grey-light;
+                }
+                &:not(.collapsed) {
+            
+                    &:hover {
+                        text-decoration-color: $nb-grey-light;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+// Mixins for smaller screen sizes
+@mixin actiontiles-below992 () {
+    .bga-component.action-tile {
+        .component-content {
+            flex-wrap: wrap;
+        }
+        .component-title {
+            width: 100%;
+            min-height: auto;
+            padding: 16px 24px !important; 
+            justify-content: flex-start;
+
+            h3 {
+                margin: 0;
+                text-align: left;
+            }
+
+            .img-wrapper {
+                display: none;
+            }
+        }
+        .component-text {
+            width: 100%;
+        }
+    }
+}
+
+// SMALLER SCREENS display. Using classes instead of media queries because both breakpoint toggles and small size screens need to be taken into account.
+.component-example.bp-below992{
+    @include actiontiles-below992();
+}
+
+@media (max-width: 992px) {
+    @include actiontiles-below992();
+}

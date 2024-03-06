@@ -1,0 +1,395 @@
+.stepped-navigation-wrapper {
+    background: $bga-teal-highlight-light;
+
+    .mobile-stepped-nav {
+        display: none;
+    }
+
+    &.white {
+        background: transparent;
+        
+        .step {
+            .step-number {
+                background-color: $bga-white;
+                border-color: $bga-blue-black-light;
+            }
+            &::before {
+                border-bottom-color: $bga-blue-black-light;
+            }
+        }
+    }
+}
+.stepped-navigation {
+    display: flex;
+    position: relative;
+
+    .step {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        flex: 1 1 0;
+        width: 0;
+        z-index: 2000;
+        text-decoration: none;
+        font-weight: 400;
+        color: $bga-blue-black-mid-dark;
+        position: relative;
+        border: solid 2px transparent;
+        background: none !important;
+ 
+        &:focus-visible {
+            border: $bga-component-focus-border;
+            border-radius: $bga-focus-radius;
+            outline: none;
+        }
+       
+        &::before {
+            content: "";
+            width: 100%;
+            position: absolute;
+            border-bottom: 4px solid $bga-teal-highlight-mid;
+            z-index: 1000;
+            right: calc(100% - 18px);
+            top: 19px;
+        }
+        &:first-of-type::before {
+            display: none;
+        }
+        &:last-of-type {
+            margin-right: 0 !important;
+        }
+        
+        .step-number {
+            width: 38px;
+            height: 38px;
+            border: solid 3px $bga-teal-highlight-mid;
+            background: $bga-teal-tool-extra-light;
+            display: flex;
+            justify-content: center;
+            border-radius: 50px;
+            align-items: center;
+            align-content: center;
+            font-weight: 700;
+            font-size: 1.125rem;
+            z-index: 3000;
+ 
+        }
+        .step-name {
+            width: 100%;
+            display: block;
+            font-size: .875rem;
+
+        }
+
+        &.completed {
+            cursor: pointer;
+            font-weight: 600;
+
+            &::before {
+                border-bottom-color: $bga-blue-links;
+            }
+            
+            .step-number {
+                text-indent: -9999px;
+                background: $bga-blue-links url(../assets/icon-tick-white.svg) no-repeat;
+                background-position: center center;
+                background-size: 18px 14px;
+                border-color: $bga-blue-links;
+            }
+            .step-name {
+                color: $bga-blue-links;
+                text-decoration: underline;
+                text-decoration-color: $bga-blue-links;
+            }
+
+            &:hover {
+                text-decoration: underline;
+                text-decoration-color: $bga-blue-links;
+            }
+            &.active {
+                .step-number {
+                    background: $bga-white url(../assets/icon-tick-blue.svg) no-repeat;
+                    background-position: center center;
+                    background-size: 18px 14px;
+                }
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+        &.active {
+            &::before {
+                border-bottom: 4px solid $bga-blue-links;
+            }
+            .step-number {
+                background: $bga-white;
+                color: $bga-blue-links;
+                border-color: $bga-blue-links;
+            }
+            .step-name {
+                font-weight: 700;
+                color: $bga-blue-links;
+                text-decoration: none;
+            }
+        }
+        &.visited {
+            &::before {
+                border-bottom: 4px solid $bga-blue-links;
+            }
+            .step-number {
+                background: $bga-white;
+                color: $bga-blue-links;
+                border-color: $bga-blue-links;
+            }
+            .step-name {
+                font-weight: 600;
+                color: $bga-blue-links;
+                text-decoration: underline;
+                text-decoration-color: $bga-blue-links;
+            }
+        }
+    }
+
+}
+
+.stepped-navigation-wrapper.non-branded.white {
+    .step {
+        color: $bga-black;
+        position: relative;
+        border: solid 2px transparent;
+ 
+        &:focus-visible {
+            border-color: $nb-blue-links;
+        }
+       
+        &::before {
+            border-bottom: 4px solid $nb-grey-darkest;
+        }
+        
+        .step-number {
+            border: solid 3px $nb-grey-darkest;
+            background: $nb-grey-lightest;
+        }
+
+        &.completed {
+            &::before {
+                border-bottom-color: $nb-blue-links;
+            }
+            .step-number {
+                background: $nb-blue-links url(../assets/icon-tick-white.svg) no-repeat;
+                background-position: center center;
+                background-size: 18px 14px;
+                border-color: $nb-blue-links;
+
+            }
+            .step-name {
+                color: $nb-blue-links;
+                text-decoration-color: $nb-blue-links;
+            }
+
+            &:hover {
+                text-decoration-color: $nb-blue-links;
+            }
+        }
+        &.active {
+            &::before {
+                border-bottom: 4px solid $nb-blue-links;
+            }
+            .step-number {
+                background: $bga-white;
+                color: $nb-blue-links;
+                border-color: $nb-blue-links;
+            }
+            .step-name {
+                color: $nb-blue-links;
+            }
+        }
+        &.visited {
+            &::before {
+                border-bottom: 4px solid $nb-blue-links;
+            }
+            .step-number {
+                color: $nb-blue-links;
+                border-color: $nb-blue-links;
+            }
+            .step-name {
+                color: $nb-blue-links;
+                text-decoration-color: $nb-blue-links;
+            }
+        }
+    }
+}
+
+// Mixins for media queries and smaller screen examples
+@mixin stepped-nav-bp-768 {
+    .page-header-wrapper.tool-stepped-nav.teal, .ecb-example-layout #page-header.stepped-nav.teal {
+        background: $bga-teal-highlight-light;
+        padding: 0 !important;
+        
+        .header-content {
+            padding: 0 0 32px 0 !important;
+        }
+    }
+    
+    .stepped-navigation {
+        .step {
+            margin-right: 4px !important;
+
+            &::before {
+                right: calc(100% - 30px);
+            }
+            .step-name {
+                font-size: 0.8125rem;
+            }
+        }
+    }
+}
+
+@mixin stepped-nav-below768 {
+    .page-header-wrapper.tool-stepped-nav.teal, .ecb-example-layout #page-header.stepped-nav.teal {
+        //background: none;
+        padding: 0 !important;
+        
+        .header-content {
+            padding: 0 !important;
+        }
+    }
+    .stepped-navigation-wrapper {
+        padding: 16px 32px !important;
+
+        .step-title {
+            display: none;
+        }
+        .step .step-name {
+            font-size: .875rem;
+        }
+        .mobile-stepped-nav {
+            display: flex;
+            align-items: center;
+            
+            button {
+                background: transparent url(../assets/icon-menu-black.svg) no-repeat;
+                border: none;
+                height: 22px;
+                width: 22px;
+                text-indent: -9999px;
+                background-size: 22px 22px;
+
+                &.open {
+                    background-image: url(../assets/icon-close-black.svg);
+                }
+            }
+            
+        }
+        &.white {
+            .step {
+                &::before {
+                    border-left-color: $bga-blue-black-light;
+                    border-bottom: none;
+                }
+            }
+        }
+        &.in-page {
+            background: $bga-blue-black-background-lightest;
+            padding: 16px !important;
+            margin-bottom: 0 !important;
+    
+            .stepped-navigation-wrapper {
+                padding: 0 !important;
+            }
+    
+            .stepped-navigation {
+                padding: 32px 0 0 0 !important;
+            }
+    
+            .stepped-nav-toggle {
+                background: none;
+                width: 100%;
+                height: auto;
+                text-indent: 0;
+                display: flex;
+                font-weight: 400;
+                font-size: 1rem;
+                color: $bga-black;
+                justify-content: space-between;
+                align-items: center;
+                text-align: left;
+    
+                strong {
+                    font-weight: 600;
+                }
+    
+                &.open {
+                    background: none;
+                    svg {
+                        transform: scaleY(-1);
+                    }
+                }
+            }
+        }
+    }
+    .stepped-navigation {
+        display: none;
+        flex-wrap: wrap;
+        text-align: left;
+        padding-top: 32px;
+        
+        .step {
+            width: 100%;
+            border: none;
+            margin: 0 0 16px 0 !important;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+
+            .step-number {
+                display: inline-flex;
+                flex-shrink: 0;
+                margin: 0 16px 0 0 !important;
+                width: 32px;
+                height: 32px;
+                border-width: 2px;
+                font-size: 1rem;
+            }
+            .step-name {
+                display: block;
+            }
+
+            &::before {
+                width: 4px;
+                height: 100%;
+                border-left: 3px solid $bga-teal-highlight-mid;
+                border-bottom: none;
+                left: 15px;
+                top: -16px;
+            }
+            &.completed, &.active {
+                &::before {
+                    border-left: 3px solid $bga-blue-links;
+                }
+            }
+        }
+    }
+    .stepped-nav-toggle {
+        min-height: auto !important;
+    }
+}
+
+
+// SMALLER SCREENS display. Using classes instead of media queries because both breakpoint toggles and small size screens need to be taken into account.
+.component-example.bp-768, .component-example.bp-below768 {
+    @include stepped-nav-bp-768();
+}
+
+
+.component-example.bp-below768 {
+    @include stepped-nav-below768();
+}
+
+// Media queries for HTML example pages
+@media (max-width: 992px) {
+    @include stepped-nav-bp-768();
+}
+@media (max-width: 768px) {
+    @include stepped-nav-below768();
+}

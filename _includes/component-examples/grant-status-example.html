@@ -1,0 +1,67 @@
+<div class="bga-component-wrapper pb-5">
+    <div class="bga-component grant-status-indicator {{include.classes}} m-0">
+
+        <div class="p-4 mb-5 component-content">
+            <div class="status mb-4">
+                <div class="icon-wrapper py-1 px-2 me-3">
+                    <img class="pe-2" src={{ include.icon }} alt="" />
+                    <p class="p-0 m-0"><strong>{{ include.status }}</strong></p>
+                </div>
+                <div class="status-detail">
+                    <p class="mb-0"><strong>{{ include.status-detail }}</strong></p>
+                </div>
+            </div>
+
+            {% if include.time-zone %}
+            <div class="dates-times-wrapper mb-5 remove-element-padding">
+                
+                {% if include.open-date %}
+                <p class="dates-times mb-3"><strong>Opening date:</strong>
+                    <span class="AEST show">Wednesday 21 December 2022 5:00am AEDT.</span>
+                    <span class="ACST">Wednesday 21 December 2022 4:30am ACST.</span>
+                    <span class="AWST">Wednesday 21 December 2022 3:00am AWST.</span>
+                </p>
+                {% endif %}
+
+                {% if include.close-date %}
+                <p class="dates-times mb-3"><strong>Closing date:</strong>
+                    <span class="AEST show">Thursday 23 January 2023 05:00pm AEST.</span>
+                    <span class="ACST">Thursday 23 January 2023pm ACST.</span>
+                    <span class="AWST">Thursday 23 23 January 2023 03:00pm AWST.</span>
+                </p>
+                {% endif %}
+
+
+                <div class="time-zone ">
+                    <label class="mb-2" for="timezones">Change time zone:</label>
+
+                    <select class="py-2 ps-2 pe-5" name="timezones">
+                        <option value="AEST">Australian Eastern Standard time (AEST)</option>
+                        <option value="ACST">Australian Central Standard Time (ACST)</option>
+                        <option value="AWST">Australian Western Standard Time (AWST)</option>
+
+                    </select>
+                </div>
+
+            </div>
+            {% endif %}
+
+
+            {% if include.application-detail %}
+            <div class="application-detail remove-element-padding">
+                <p><strong>Application detail:</strong> {{ include.application-detail }}</p>
+            </div>
+            {% endif %}
+
+        </div>
+
+        <div class="grant-details">
+            <h3>What do you get?</h3>
+            <p>{{ include.what-get }}</p>
+
+            <h3>Who is this for?</h3>
+            <p>{{ include.who-for }}</p>
+        </div>
+
+    </div>
+</div>

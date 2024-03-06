@@ -1,0 +1,178 @@
+.bga-component.hero-pathway {
+    border: 1px solid $bga-blue-border;
+    display: flex;
+    background: $bga-white;
+
+    .icon-wrapper {
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+ 
+        
+        .external-site {
+            background: $bga-blue-background-extralight;
+            min-height: 48px;
+            border-radius: 50px;
+            padding: 0;
+            margin-left: -48px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+        p {  
+            padding-top: 4px;
+            padding-bottom: 4px;
+            font-size: .88rem;
+            line-height: 18px;
+            font-weight: 600;
+            word-wrap: break-word;
+        }
+    }
+    .arrow-icon {
+        width: 48px;
+        height: 48px;
+        background: $bga-blue-highlight-mid;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        z-index: 10;
+
+        img {
+            width: 16px;
+            height: auto;    
+        }
+    }
+    
+    &.border-purple {
+        @include hero-color($bga-purple-highlight-dark, $bga-purple-highlight-mid, $bga-purple-highlight-light);
+    }
+    &.border-orange {
+        @include hero-color($bga-orange-highlight-dark, $bga-orange-highlight-mid, $bga-orange-highlight-light);
+    }
+    &.border-green {
+        @include hero-color($bga-green-highlight-dark, $bga-green-highlight-mid, $bga-green-highlight-light);
+    }
+    &.border-yellow {
+        @include hero-color($bga-yellow-highlight-dark, $bga-yellow-highlight-mid, $bga-yellow-highlight-light);
+    }
+    &.border-teal {
+        @include hero-color($bga-teal-highlight-dark, $bga-teal-highlight-mid, $bga-teal-highlight-light);
+    }
+    
+    .component-content {
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+        border-left: 16px solid $bga-blue-border;
+    }
+    .component-text {
+        width: 100%;
+        flex-shrink: 0;
+    }  
+    
+    .component-image {
+        width: 50%;
+        flex-basis: auto;
+        flex-grow: 0;
+        display: block;
+        
+        img {
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+    
+    &:focus, &:hover {
+        color: $bga-black;
+        background: $bga-teal-tool-extra-light;
+        
+        .icon-wrapper {
+            .external-site {
+                background: $bga-white;
+            }
+        }
+    }
+    
+    &.small-hero {
+        .component-content {
+            width: 100%;
+        }
+        .component-image {
+            display: none;
+        }
+    }
+    
+    &.non-branded {
+
+        &:focus, &:hover {
+           color: $bga-black;
+           background: $nb-grey-lightest;
+        }
+
+        .icon-wrapper {
+            .external-site {
+                background: transparent;
+                padding: 0 0 0 16px !important;
+                margin-left: 0;
+                min-height: auto;
+            }
+        }
+    }
+}
+
+.colour-options-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 -16px;
+    
+    .hero-pathway {
+        flex: 1 0 30%;
+        margin: 0 16px 32px !important;
+        
+        .component-content {
+            width: 100%;
+        }
+    }
+}
+
+
+
+// Mixins for smaller screen sizes and media queries
+@mixin hero-below992 (){
+    .bga-component.hero-pathway {
+
+        .component-content {
+            border-left-width: 8px !important;
+            width: 100%;
+        }
+        .component-image {
+            display: none;
+        }
+        
+        &.small-hero {
+            width: 100%;
+        }
+    }
+}
+
+
+// SMALLER SCREENS display. Using classes instead of media queries because both breakpoint toggles and small size screens need to be taken into account.
+.component-example.bp-below992 {
+    @include hero-below992();
+}
+
+
+// MEDIA Queries for HTML demo pages.
+@media(max-width: 992px) {
+    @include hero-below992();
+
+    // In page example (single tile)    
+    .bga-component.hero-pathway.in-page {
+        width: 100%;
+    }
+
+}

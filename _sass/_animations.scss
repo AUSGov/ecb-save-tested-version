@@ -1,0 +1,166 @@
+.bga-animation {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    &.loading-animation {
+
+        @keyframes fa-spin {
+            0% {
+                transform: rotate(0deg)
+            }
+
+            to {
+                transform: rotate(1turn)
+            }
+        }
+
+        svg {
+            width: 40px;
+            height: 40px;
+            flex: 1 100%;
+        }
+
+        &.show {
+            svg {
+                animation: fa-spin 2s linear infinite;
+            }
+        }
+    }
+
+    &.success-animation {
+
+       @keyframes circle-animation {
+            0% {
+                stroke-dashoffset: 126;
+                fill: transparent;
+            }
+
+            50% {
+                stroke-dashoffset: 0;
+                fill: transparent;
+            }
+
+            100% {
+                stroke-dashoffset: 0;
+                fill: $bga-green-success-dark;
+            }
+        }
+        @keyframes tick-fadein {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .success-icon {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+
+            circle {
+                fill: $bga-green-success-dark;
+                stroke: $bga-green-success-dark;
+                stroke-width: 4px;
+                stroke-dasharray: 126;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1000;
+            }
+
+           .tick {
+                position: absolute;
+                z-index: 2000;
+            } 
+        } 
+        
+        &.show {
+
+            .success-icon {
+                display: flex;
+                align-items: center;
+
+                circle {
+                    fill: $bga-green-success-dark;
+                    stroke: $bga-green-success-dark;
+                    stroke-width: 4px;
+                    stroke-dasharray: 126;
+                    animation: circle-animation 2s linear infinite;
+                    animation-timing-function: linear;
+                    animation-iteration-count: 1;
+                    transform: rotate(-90deg);
+                    transform-origin: center;
+                }
+                .tick {
+                    animation: tick-fadein 2s;
+                }
+            }
+        }
+    }
+
+    &.highlight-animation {
+        span { 
+            
+            background-color: $bga-white;
+            transition: background-color 800ms linear;
+            -moz-transition: background-color 800ms linear;
+            -webkit-transition: background-color 800ms linear;
+            -ms-transition: background-color 800ms linear;
+            
+            &.highlight {
+                background-color: $bga-green-success-mid;
+            }
+        }
+    }
+
+    &.heartbeat-animation {
+        &.beat {
+                svg {
+                    -webkit-animation: heartbeat 1.5s ease-in-out both;
+                    animation: heartbeat 1.5s ease-in-out both;
+                    animation-duration: 500ms;
+                    animation-iteration-count: 1;
+                }
+            }
+        
+        @keyframes heartbeat { 
+            from {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                -webkit-transform-origin: center center;
+                transform-origin: center center;
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+            }
+        
+            10% {
+                -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+            }
+        
+            17% {
+                -webkit-transform: scale(1.25);
+                transform: scale(1.25);
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+            }
+        
+            33% {
+                -webkit-transform: scale(1.4);
+                transform: scale(1.4);
+                -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in;
+            }
+        
+            45% {
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out;
+            }
+        }
+        
+    }
+}

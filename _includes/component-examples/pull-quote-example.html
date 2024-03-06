@@ -1,0 +1,14 @@
+<div class="bga-component-wrapper">
+    <div class="bga-component pull-quote {{include.classes}} pt-5 pb-6">
+
+        <div class="component-content ps-4 d-flex">
+        
+        <div class="component-text">
+            <blockquote class="mb-3">{{ include.quote }}</blockquote>
+            {% if include.author %}
+                <p class="author mb-0 pb-2">&mdash; {{ include.author }}</p>
+                {%  endif %}
+        </div>
+    </div>
+    </div>
+</div>

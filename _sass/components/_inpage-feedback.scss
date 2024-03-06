@@ -1,0 +1,161 @@
+.bga-inpage-feedback {
+    border-top: 1px solid $bga-blue-black-mid-dark;
+    
+    .button-example {
+        display: flex;
+        column-gap: 24px;
+        row-gap: 24px;
+    }
+    .initial-question {
+        align-items: center;
+        display: none;
+       
+        &.show {
+            display: flex;
+        }
+        .bga-btn.yes, .bga-btn.no {
+            &:focus, &:hover, &:active, &.selected {
+                svg path.fill {
+                    fill: $bga-white;
+                }
+            }
+        } 
+        .bga-btn.no.selected {
+            background: $bga-blue-background-dark;
+            color: $bga-white;
+            border-color: $bga-blue-background-dark;
+        }
+    }
+    .yes-answer {
+        display: none;
+
+        &.show {
+            display: block;
+        }
+    }
+    .no-answer {
+        display: none;
+        
+        &.show {
+            display: block;
+        }
+
+        .textarea-container {
+            display: none;
+
+            &.show {
+                display: block;
+            }
+        }
+
+    }
+    .thank-you-container {
+        display: none;
+        
+        &.show {
+            display: block;
+        }
+        
+        a {
+            color: $bga-blue-links;
+            text-decoration: underline;
+
+            &:focus-visible {
+                border: $bga-text-focus-border;
+                background: $bga-blue-hover;
+                border-radius: $bga-focus-radius;
+                outline: none;
+                color: $bga-blue-footer;
+                text-decoration: underline;
+
+            }
+            &:hover {
+                background: $bga-blue-hover;
+                color: $bga-blue-footer;
+                text-decoration: underline;
+            }
+        }  
+    }
+
+    .non-branded {
+        
+        .bga-btn {
+            border: solid 2px $bga-black;
+            background: $nb-grey-light;
+            border-radius: 8px;
+
+            &.no.selected {
+                background-color: $bga-black;
+                color: $bga-white;
+                border-color: $bga-black;
+            }
+    
+            &.bga-secondary-btn {
+                background: $bga-white;
+                border-color: $nb-grey-extra-darkest;
+
+                svg  {
+                    display: none !important;
+                }
+            }
+    
+            &:focus-visible {
+                border-color: $nb-blue-links;
+                color: $bga-black;
+            }
+            &:hover {
+                border-color: $bga-black;
+                color: $bga-black;
+                background: $nb-grey-lightest;
+            }   
+        }
+        .checkboxes [type=checkbox]:checked {
+            background: #ffffff url(../assets/icon-tick-black.svg) no-repeat center center;
+            border: solid 3px $bga-black !important;
+    
+            + label {
+                color: $bga-black;
+            }
+        }
+        a{
+            color: $nb-blue-links;
+
+            &:focus-visible {
+                color: $nb-blue-links;
+                border: $nb-blue-links solid 2px;
+                border-radius: $bga-focus-radius;
+                background: transparent;
+            }
+            &:hover {
+                color: $nb-blue-links;
+                background: transparent;
+            }
+        }
+    }
+}
+
+
+// Mixins for smaller screen sizes and media queries
+@mixin feedback-below576(){
+    .bga-inpage-feedback {
+        .initial-question {
+            flex-wrap: wrap;
+
+            P {
+                width: 100%;
+                margin-bottom: 16px !important;
+            }
+        }
+    }
+}
+
+// SMALLER SCREENS display. Using classes instead of media queries because both breakpoint toggles and small size screens need to be taken into account.
+.component-example.bp-below576,
+.component-example.small-screen {
+    @include feedback-below576();
+}
+
+// Media queries for HTML example pages
+@media (max-width: 576px) {
+    @include feedback-below576();
+}

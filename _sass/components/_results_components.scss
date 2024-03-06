@@ -1,0 +1,545 @@
+.bga-component.bga-default-accordion.results-accordion {
+    .accordion-item {
+        &:hover {
+            border-bottom: $bga-blue-black-light solid 2px;
+        }
+        &.show {
+            border-bottom: $bga-blue-black-light solid 2px;
+        }
+    }
+    .accordion-button {
+        .title-area {
+            p {
+                font-size: 0.875rem;
+            }
+        }
+        &::after {
+            width: 16px;
+            height: 10px;
+            box-shadow: none;
+            background-color: transparent;
+            border-radius: 0;
+        }
+        &:hover {
+            background: $bga-blue-black-lightest;
+            text-decoration: none;
+
+            h4 {
+                text-decoration: underline;
+            }
+            
+            &::after {
+                background-color: transparent;
+            }
+        }
+        &:not(.collapsed) {
+
+            &:hover {
+                border-bottom: none;
+                background: $bga-blue-black-lightest;
+            }
+            &::after {
+                box-shadow: none;
+                background-color: transparent;
+            }
+        }
+    }
+    .accordion-body {
+        p {
+            width: 100%;
+        }
+    }
+
+    &.yellow {
+        .accordion-toggle {
+            display: none;
+        }
+        .accordion {
+            border-top: none;
+        }
+
+        .accordion-item {
+            background: $bga-yellow-highlight-mid;
+            border-bottom: $bga-black solid 1px;
+
+            .accordion-button {
+                background: $bga-yellow-highlight-light;
+
+                h4 {
+                    margin-bottom: 8px !important;
+                }
+
+                p {
+                    margin: 0;
+                    padding: 0;
+                    color: $bga-black;
+                    font-size: 0.875rem;
+
+                    &.reason {
+                        padding-bottom: 8px;
+                        margin-bottom: 8px;
+                        border-bottom: $bga-black solid 1px;
+
+                        &.last {
+                            border-bottom: none;
+                            padding-bottom: 0;
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+
+                &:hover {
+                    text-decoration: none;
+                    background: $bga-yellow-highlight-mid;
+                }
+
+                &:focus-visible {
+                    background: $bga-yellow-highlight-mid;
+                }
+
+                &:not(.collapsed) {
+                    background-color: $bga-yellow-highlight-mid;
+
+                    &:hover {
+                        border-bottom: none;
+                        background-color: $bga-yellow-highlight-mid;
+                    }
+                }
+
+            }
+        }
+    }
+
+    &.grey {
+        .accordion-toggle {
+            display: none;
+        }
+        .accordion {
+            border-top: none;
+        }
+
+        .accordion-item {
+            background: $bga-blue-black-lightest;
+            border-bottom: $bga-black solid 1px;
+
+            .accordion-button {
+                background: $bga-blue-black-background-lightest;
+
+                h4 {
+                    margin-bottom: 8px !important;
+                }
+
+                p {
+                    margin: 0;
+                    padding: 0;
+                    color: $bga-black;
+                    font-size: 0.875rem;
+
+                    &.reason {
+                        padding-bottom: 8px;
+                        margin-bottom: 8px;
+                        border-bottom: $bga-black solid 1px;
+
+                        &.last {
+                            border-bottom: none;
+                            padding-bottom: 0;
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+
+                &:hover {
+                    text-decoration: none;
+                    background: $bga-blue-black-lightest;
+                }
+
+                &:focus-visible {
+                    background: $bga-blue-black-lightest;
+                }
+
+                &:not(.collapsed) {
+                    background: $bga-blue-black-lightest;
+
+                    &:hover {
+                        border-bottom: none;
+                        background: $bga-blue-black-lightest;
+                    }
+                }
+
+            }
+        }
+    }
+
+    &.non-branded {
+        .accordion-item {
+            &:hover, &.show {
+                border-bottom: $bga-black solid 1px;
+            }
+        }
+        .accordion-button {
+            &:hover {
+                background: $nb-grey-light;
+            }
+            &:not(.collapsed) {
+    
+                &:hover {
+                    background: $nb-grey-light;
+                }
+            }
+        }
+        a {
+            &:focus-visible {
+                color: $nb-blue-links;
+                border: $nb-blue-links solid 2px;
+                border-radius: $bga-focus-radius;
+                background: transparent;
+            }
+            &:hover {
+                color: $nb-blue-links;
+                background: transparent;
+            }   
+        }
+    }
+}
+
+.edit-answers-component {
+    background: $bga-teal-highlight-light;
+
+    .component-content {
+        display: none;
+    }
+
+    .edit-answers-toggle {
+        background: $bga-teal-highlight-mid;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        svg {
+            flex-shrink: 0;
+            transition: transform 0.2s ease-in-out;
+        }
+        &.open {
+            svg {
+                transform: scaleY(-1);
+            }
+        }
+    }
+    .answers-section {
+        border-bottom: solid 4px $bga-teal-highlight-mid;
+
+        &:last-of-type {
+            border-bottom: none;
+        }
+    }
+    .title-area {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .answers {
+        p {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 16px 0 8px 0;
+            margin: 0;
+            border-bottom: $bga-teal-highlight-dark solid 1px;
+
+            span {
+                font-weight: 600;
+                margin-left: 8px;
+                text-align: right;
+            }
+        }  
+    }
+    .edit-btn {
+        font-size: 1.125rem;
+        color: $bga-blue-links;
+        font-weight: 600;
+        background: none;
+        border: none;
+        border-bottom: 1px solid $bga-blue-links;
+        flex-shrink: 0;
+
+        svg {
+            height: 18px;
+            width: 18px;
+        }
+    }
+
+    &.non-branded {
+        background: $nb-grey-light;
+
+        .edit-answers-toggle {
+            background: $nb-grey-mid;
+        }
+        .answers-section {
+            border-bottom-color:  $nb-grey-darkest;
+        }
+        .answers {
+            p {
+                border-bottom-color: $nb-grey-darkest;
+            }  
+        }
+        .edit-btn {
+            color: $nb-blue-links;
+            border-bottom: 1px solid $nb-blue-links;
+    
+            svg {
+                path {
+                    fill: $nb-blue-links;
+                }
+            }
+            &:focus-visible {
+                color: $nb-blue-links;
+                border: $nb-blue-links solid 2px;
+                border-radius: $bga-focus-radius;
+                background: transparent;
+            }
+            &:hover {
+                color: $nb-blue-links;
+                background: transparent;
+            }   
+        }
+    }
+}
+
+.results-edit-answers-component {
+    border: $bga-component-border;
+
+    .title-area {
+        background: $bga-teal-highlight-light;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .edit-btn {
+        font-size: 1.125rem;
+        color: $bga-blue-links;
+        font-weight: 600;
+        background: none;
+        border: none;
+        border-bottom: 1px solid $bga-blue-links;
+        flex-shrink: 0;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:focus-visible {
+            border: $bga-text-focus-border;
+            border-radius: $bga-focus-radius;
+        }
+        &:hover {
+            text-decoration: none;
+        }
+
+        svg {
+            height: 18px;
+            width: 18px;
+        }
+    }
+    &.no-btn {
+        .edit-btn {
+            display: none;
+        }
+    }
+    .textarea {
+        white-space: pre-wrap;
+
+        strong {
+            display: block;
+        }
+    }
+
+
+    &.non-branded {
+        .title-area {
+            background: $nb-grey-light;
+        }
+        .edit-btn {
+            color: $nb-blue-links;
+            border-bottom: 1px solid $nb-blue-links;
+    
+            svg {
+                path {
+                    fill: $nb-blue-links;
+                }
+            }
+            &:focus-visible {
+                color: $nb-blue-links;
+                border: $nb-blue-links solid 2px;
+                border-radius: $bga-focus-radius;
+                background: transparent;
+            }
+            &:hover {
+                color: $nb-blue-links;
+                background: transparent;
+            }   
+        }
+    }
+}
+
+.callout-results {
+    background: $bga-blue-background-extralight;
+
+    .header-section {
+        background: $bga-blue-background-light;
+    }
+
+    .learn-more {
+        background: none;
+        border: none;
+        padding: 0 !important;
+        margin: 0;
+        font-size: 1rem !important;
+        color: $bga-blue-links;
+        transition: transform 0.2s ease-in-out;
+        min-height: auto !important;
+        display: flex;
+        align-items: center;
+
+        &:focus-visible {
+            border: $bga-text-focus-border;
+            border-radius: $bga-focus-radius;
+            background: none;
+        }
+        &:hover {
+            background: none;
+        }
+
+        &.open {
+            svg {
+                transform: scaleY(-1);
+            }
+        }
+    }
+
+    .more-info {
+        background: $bga-white;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    &.non-branded {
+        background: $nb-grey-mid;
+
+        .header-section {
+            background: $nb-grey-light;
+        }
+        .learn-more {
+            color: $nb-blue-links;
+
+            svg, svg path {
+                fill: $nb-blue-links;
+            }
+        }
+    }
+}
+
+
+// Mixins for smaller screen sizes
+@mixin results-below576 () {
+    .bga-default-accordion.bga-default-accordion.results-accordion {
+        .accordion-item {
+            .accordion-button {
+                .title-area {
+                    padding-right: 16px !important;
+                }
+
+                p {
+                    padding-right: 0 !important;
+                }
+                &::after {
+                    height: 10px;
+                    width: 16px;
+                }
+            }
+            .accordion-body {
+                padding: 0 16px 16px 16px !important;
+            }
+        }
+        &.yellow {
+            .accordion-header .registration-reason {
+                padding-right: 16px !important;
+            }
+        }
+    }
+
+    .edit-answers-component {
+        .component-content {
+            padding: 16px !important;
+        }
+        .edit-answers-toggle {
+            padding: 16px !important;
+
+            h3 {
+                font-size: 1.125rem;
+            }
+        }
+        .answers-section {
+            padding-bottom: 48px !important;
+            margin-bottom: 16px !important;
+
+            &:last-of-type {
+                padding-bottom: 24px !important;
+                margin-bottom: 0 !important;
+            }
+        }
+        .title-area {
+            h3 {
+                font-size: 1.125rem;
+            }
+        }
+        .answers {
+            p {
+                flex-wrap: wrap;
+
+                span {
+                    margin: 8px 0 0 0 !important;
+                    width: 100%;
+                    text-align: left;
+                }
+            }
+        }
+        .edit-btn {
+            min-height: auto;
+        }
+    }
+
+    .results-edit-answers-component {
+        .edit-btn {
+            font-size: 1.125rem !important;
+        }
+        .title-area {
+            padding: 16px !important; 
+            flex-wrap: wrap;  
+            
+            h3 {
+                width: 100%;
+            }
+        }
+        .edit-btn {
+            margin: 16px 0 0 0 !important;
+        }
+        .component-content {
+            padding: 16px !important;
+        }
+    }
+}
+
+// SMALLER SCREENS display. Using classes instead of media queries because both breakpoint toggles and small size screens need to be taken into account.
+.component-example.bp-below576{
+    @include results-below576();
+}
+
+// Media queries for HTML example pages
+@media (max-width: 768px) {
+    .edit-answers-component {
+        .edit-btn {
+            font-size: 1.125rem !important;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    @include results-below576();
+}

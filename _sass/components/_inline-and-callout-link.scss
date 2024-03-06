@@ -1,0 +1,179 @@
+.inline-pathway {
+    
+    a {
+        background: $bga-blue-background-extralight;
+        text-decoration: none;
+        display: flex;
+
+        .link-wrapper {
+            border-left: solid 8px $bga-blue-border;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        &:focus-visible {
+            color: $bga-blue-links;
+            border: $bga-component-focus-border;
+            border-radius: $bga-focus-radius;
+            background: $bga-blue-background-light;
+            outline: none;
+        }
+        &:hover {
+            background: $bga-blue-background-light;
+            color: $bga-blue-links;
+        }
+        &:last-of-type {
+            margin-bottom: 0 !important;
+        }
+    }
+    .link {
+        width: 100%;
+        text-decoration: underline;
+    }
+    .page {
+        display: flex;
+        align-items: center;
+        color: $bga-black;
+        
+        img {
+            width: 16px;
+            height: 16px;
+        }
+        span {
+            display: inline-block;
+        }
+    }
+    &.colour-bkg {
+        a {
+            &:focus-visible {
+                background: $bga-white;
+            }
+            &:hover {
+                background: $bga-white;
+            }
+        }
+    }
+    &.non-branded {
+        a {
+            background:$nb-grey-light;
+            color: $nb-blue-links;  
+    
+            .link-wrapper {
+                border-left: none;
+            }
+            
+            &:focus-visible {
+                background: $nb-grey-mid;
+            }
+            &:hover {
+                color: $nb-blue-links;
+                background: $nb-grey-mid !important;
+            }
+        }
+        .page {
+            color: $bga-black;
+        }
+        &.callout-link {
+            .icon-wrapper {
+                background: $nb-grey-extra-darkest;
+            }
+        }
+
+    } 
+}
+
+.inline-pathway.callout-link {
+    background: $bga-blue-background-extralight;
+
+        .content {
+            border-left: solid 8px $bga-blue-border;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+
+            a {
+                display: inline;
+                
+                &:focus-visible {
+                    border: $bga-component-focus-border;
+                    border-radius: $bga-focus-radius;
+                    color: $bga-blue-footer;
+                    background: $bga-blue-hover;
+                }
+                &:hover {
+                    color: $bga-blue-footer;
+                    background: $bga-blue-hover;
+                } 
+            }
+        }
+
+    .icon-wrapper {
+        width: 56px;
+        height: 56px;
+        background: $bga-blue-background-dark;
+        border-radius: 100px;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+    img {
+        width: 24px;
+        height: auto;
+    }
+    &.non-branded {
+        .content {
+            border: none;
+        }
+        a {
+            &:focus-visible {
+                color: $nb-blue-links;
+                border: $nb-blue-links solid 2px;
+                border-radius: $bga-focus-radius;
+            }
+            &:hover {
+                color: $nb-blue-links;
+                background: transparent !important;
+            } 
+        }
+        img {
+            width: auto !important;
+        }
+    }
+}
+
+// Mixins for smaller screen sizes and media queries
+@mixin inline-callout-below576 (){
+    .inline-pathway.callout-link {
+        .content {
+            flex-wrap: wrap !important;
+            align-items: center;   
+            justify-content: center;
+        }
+        .link-wrapper {
+            width: 100%;
+        }
+        .icon-wrapper {
+            width: 44px;
+            height: 44px;
+            margin: 0 0 16px 0 !important;
+        }
+        img {
+            width: 20px;
+        }
+       
+    }
+}
+
+
+
+
+// SMALLER SCREENS display. Using classes instead of media queries because both breakpoint toggles and small size screens need to be taken into account.
+.component-example.bp-below576, .component-example.small-screen {
+    @include inline-callout-below576();
+}
+
+@media (max-width: 576px) {
+    @include inline-callout-below576();
+}
+

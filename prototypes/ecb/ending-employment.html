@@ -1,0 +1,225 @@
+---
+
+layout: ecb-8-step
+title: Employment Contract Tool
+stepped-nav-step: Ending employment
+step-number: 6
+
+---
+
+<div class="container page-content prototype-default-state ending-employment-page my-5">
+
+    <!-- DISMISSAL NOTICE -->
+    <div id="section-dismissal-notice" class="row remove-element-padding">
+
+        <h2>Dismissal notice</h2>
+
+        <div class="remove-top-spaces col-12 col-md-8 col-xl-7">
+
+            <div class="question-section remove-element-padding">
+
+                <p class="mb-5">If you dismiss an employee, you must provide specific minimum notice periods or the equivalent pay (unless they're in the list of employees that do not get notice). You should also check the minimum notice in the award – some have longer notice periods. If your award isn't listed, choose 'Other' then find it in the linked list of awards.</p>
+
+                {% include component-examples/tool-output-box-example.html
+                    title="Dismissal notice clause"
+                    tag="Included"
+                    tag-type="mandatory"
+                    content="<p>You are entitled to the following minimum notice periods (or payment in lieu of notice) if we end your employment. This does not apply if we end your employment for serious misconduct.</p>
+                    <table class='table'>
+                    <thead>
+                    <tr>
+                    <th>Continuous employment with us</th>
+                    <th>Minimum notice period</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                    <td>1 year or less</td>
+                    <td><strong>1 week</strong></td>
+                    </tr>
+                    <tr>
+                    <td>More than 1 year to 3 years</td>
+                    <td><strong>2 weeks</strong></td>
+                    </tr>
+                    <tr>
+                    <td>More than 3 years to 5 years</td>
+                    <td><strong>3 weeks</strong></td>
+                    </tr>
+                    <tr>
+                    <td>More than 5 years</td>
+                    <td><strong>4 weeks</strong></td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    
+                    <p>You may be entitled to a longer minimum notice period under your award.</p>
+                    <p>You will get an extra week of notice if you're older than 45 years and have worked for us for at least 2 years.</p>"
+                    id="dismissal-notice"
+                    classes="pre-included"
+                %}
+            </div>
+
+        </div>
+
+        <div class="h-100 col-12 col-md-4  offset-xl-1">
+            {% include component-examples/info-sidebar-example.html
+            title="Some employees do not get notice"
+            text="<p>Exclusions apply. For example, employees do not get notice if their employment is terminated:</p>
+            <ul>
+            <li>at the end of a fixed term contract</li>
+            <li>at the end of a seasonal worker arrangement</li>
+            <li>as a casual employee</li>
+            <li>due to serious misconduct.</li>
+            </ul>
+            <p>Check for other exclusions on the Fair Work Ombudsman website.</p>
+            <h3>Payment in lieu of notice</h3>
+            <p>Instead of them working through the notice period you may pay your employee the equivalent amount.</p>
+            <h3>Unfair dismissal</h3>
+            <p>If you dismiss an employee and they think the dismissal is unfair, they may be able to challenge it through the Fair Work Commission. Learn more about ending employment and unfair dismissal on the Fair Work Ombudsman’s Ending employment page</p>
+            <p> </p>"
+            classes="inpage teal"
+            %}
+        </div>
+
+    </div>
+
+    <hr class="section-divider my-5" />
+
+
+    <!-- REDUNDANCY -->
+    <div id="section-redundancy" class="row remove-element-padding">
+
+        <h2>Redundancy</h2>
+
+        <div class="remove-top-spaces col-12 col-md-8 col-xl-7">
+
+            <div class="question-section remove-element-padding">
+
+                <p class="mb-5">Redundancy can occur when you either no longer need an employee's job to be done by anyone (e.g. you get technology that replaces the job), or you become insolvent or bankrupt.</p>
+
+                {% include component-examples/tool-output-box-example.html
+                    title="Redundancy clause"
+                    tag="Included"
+                    tag-type="mandatory"
+                    content="<p>If your position is terminated due to redundancy, any notice and redundancy pay entitlements will be in accordance with the National Employment Standards and your award.</p>"
+                    id="redundancy"
+                    classes="pre-included"
+                %}
+            </div>
+
+        </div>
+
+        <div class="h-100 col-12 col-md-4  offset-xl-1">
+            {% include component-examples/info-sidebar-example.html
+            title="Redundancy pay"
+            text="<p>When an employee's job is made redundant, you may have to provide redundancy pay if:</p>
+            <ul>
+            <li>they've been working for you for at least a year</li>
+            <li>your business has at least 15 employees when they're made redundant.</li>
+            </ul>
+            <p>You'll also need to know the rules around:</p>
+            <ul>
+            <li>consultation – if you make workplace changes that are likely to cause redundancies</li>
+            <li>giving notice</li>
+            <li>notifying Services Australia if you're making 15 or more employees redundant.</li>
+            </ul>
+            <p>Find more information on notice and redundancy pay, including exclusions, on the Fair Work Ombudsman website. You should also check the award.</p>"
+            classes="inpage teal"
+            %}
+        </div>
+
+    </div>
+
+    <hr class="section-divider my-5" />
+
+
+
+
+    <!-- MISCONDUCT -->
+    <div id="section-misconduct" class="row remove-element-padding">
+
+        <h2>Misconduct</h2>
+
+        <div class="col-12 col-md-8 col-xl-7">
+
+            <div class="question-section remove-element-padding">
+               
+                <p>This sets out that you can dismiss (fire) the employee for serious misconduct without notice.</p>
+
+                {% include component-examples/tool-output-box-example.html
+                    title="Misconduct clause clause"
+                    tag="Optional to include"
+                    tag-type="optional"
+                    input-label="Include Misconduct clause clause (optional)"
+                    content="<p>We may terminate your employment without notice, or payment in lieu of notice, if you engage in serious misconduct.</p>
+                    <p>Serious misconduct is when an employee:</p>
+                    <ul>
+                    <li>causes serious and imminent risk to the health and safety of another person or to the reputation, viability or profits of their employer's business, or</li>
+                    <li>wilfully or deliberately behaves in a way that's inconsistent with continuing their employment.</li>
+                    </ul>
+                    <p>Examples of serious misconduct include:</p>
+                    <ul>
+                    <li>theft</li>
+                    <li>fraud</li>
+                    <li>violence/assault</li>
+                    <li>sexual harassment</li>
+                    <li>serious breaches of health and safety requirements</li>
+                    <li>being drunk or affected by drugs at work</li>
+                    <li>refusing to carry out work duties.</li>
+                    </ul>"
+                    id="misconduct"
+                %}
+
+            </div>
+
+
+        </div>
+
+        <div class="h-100 col-12 col-md-4  offset-xl-1">
+            {% include component-examples/info-sidebar-example.html
+            title="Serious misconduct"
+            text="<p>To dismiss an employee without notice, you must believe that their conduct is serious enough to justify immediate dismissal.</p>
+            <p>It's a good idea to document the misconduct, in case your employee makes an unfair dismissal claim. Be careful dismissing an employee this way. If the dismissal is found to be unfair, you may have to pay compensation, lost wages and/or give the employee their job back.</p>
+            <p>Check the Fair Work Ombudsman's website for more information on serious misconduct.</p>"
+            classes="inpage teal"
+            %}
+        </div>
+
+    </div>
+
+    <hr class="section-divider my-5" />
+
+
+   
+
+
+
+
+    <!-- BUTTON GROUP -->
+    <div class="ecb-button-group">
+
+        <a class="bga-link bga-inline-link bkg-light" tabindex="0" href={{ 'prototypes/ecb/obligations.html' | relative_url }} role="button">Previous</a>
+
+
+        <a class="bga-btn bga-primary-btn bkg-light" tabindex="0" href={{ 'prototypes/ecb/review.html' | relative_url }} role="button">Next</a>
+
+        <a class="bga-btn bga-primary-btn bkg-light return-to-review d-none" tabindex="0" href={{ 'prototypes/ecb/review.html' | relative_url }} role="button">Return to review</a>
+
+    </div>
+
+
+
+</div>
+
+
+{% include prototypes/ecb-save-footer.html
+    title="Don't have time to finish your contract now?"
+    content="You can save you progress in this tool and return within the next seven days. We’ll email you a link that you can use to return and finish your contract."
+    button="Save and exit"
+    button-id="ecb-save-exit"
+    %}
+    
+
+<!-- SAVE AND EXIT MODAL -->
+{% include prototypes/ecb-save-modal.html %}
+
